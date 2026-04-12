@@ -1,0 +1,443 @@
+# Spencer's Full Project Ecosystem
+# Master dashboard of all projects and shared services
+
+direction: down
+
+vars: {
+  svc: "#E8F0FE"
+  db: "#E6F4EA"
+  ext: "#FFF3E0"
+  deploy: "#F3E8FF"
+  discord: "#E8EAF6"
+}
+
+classes: {
+  service: {
+    style.fill: ${svc}
+    style.stroke: "#1A73E8"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+  database: {
+    shape: cylinder
+    style.fill: ${db}
+    style.stroke: "#34A853"
+    style.bold: true
+    style.shadow: true
+  }
+  external: {
+    style.fill: ${ext}
+    style.stroke: "#FF9800"
+    style.stroke-dash: 3
+    style.border-radius: 8
+  }
+  hosting: {
+    shape: cloud
+    style.fill: ${deploy}
+    style.stroke: "#7C3AED"
+    style.bold: true
+    style.shadow: true
+  }
+  bot: {
+    style.fill: ${discord}
+    style.stroke: "#5865F2"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+}
+
+# Top-level vertical grid forces rows to stack
+grid-columns: 1
+
+# ============================================================
+# ROW 1: Insurance AI + WarRoom Agency
+# ============================================================
+
+row1: Active Products {
+  grid-columns: 2
+  grid-gap: 16
+  style.fill: "#FAFAFA"
+  style.stroke: "#E0E0E0"
+  style.border-radius: 16
+
+  insurance: Insurance AI Bots {
+    style.fill: "#E3F2FD"
+    style.stroke: "#1565C0"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 12
+
+    uwbot: Insurance UW Bot {
+      icon: https://icons.terrastruct.com/dev%2Fpython.svg
+      style.fill: "#BBDEFB"
+      style.stroke: "#1565C0"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Insurance UW Bot\nPython + Claude AI\n9 carriers | 545 tests
+    }
+
+    annuity: Annuity Expert AI {
+      icon: https://icons.terrastruct.com/dev%2Fpython.svg
+      style.fill: "#BBDEFB"
+      style.stroke: "#1565C0"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Annuity Expert AI\nPython + FastAPI\n19 carriers | 184 tests
+    }
+  }
+
+  warroom: WarRoom Agency {
+    style.fill: "#FFF3E0"
+    style.stroke: "#E65100"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 12
+
+    execute: Execute Financial {
+      icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
+      style.fill: "#FFE0B2"
+      style.stroke: "#E65100"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Execute Financial\nDiscord.js + Gemini
+    }
+
+    warai: war-room-ai {
+      icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
+      style.fill: "#FFE0B2"
+      style.stroke: "#E65100"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: war-room-ai\nAgency Mgmt + Gemini
+    }
+
+    leaderboard: Leaderboard Bot {
+      style.fill: "#FFE0B2"
+      style.stroke: "#E65100"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Leaderboard Bot\nSheets Integration
+    }
+
+    wrengine: WarRoomEngine {
+      icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+      style.fill: "#FFE0B2"
+      style.stroke: "#E65100"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: WarRoomEngine\nPostgreSQL Admin
+    }
+
+    licbot: Licensing Bot {
+      style.fill: "#FFE0B2"
+      style.stroke: "#E65100"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Licensing Bot\nRecruit Pipeline
+    }
+  }
+}
+
+# ============================================================
+# ROW 2: Submissions + Community + Paused
+# ============================================================
+
+row2: Additional Projects {
+  grid-columns: 3
+  grid-gap: 16
+  style.fill: "#FAFAFA"
+  style.stroke: "#E0E0E0"
+  style.border-radius: 16
+
+  submissions: Agency Submissions {
+    style.fill: "#FCE4EC"
+    style.stroke: "#C62828"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 12
+
+    diligence: Diligence {
+      style.fill: "#FFCDD2"
+      style.stroke: "#C62828"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Diligence\n11 sub-agencies
+    }
+
+    reflect: Reflect {
+      style.fill: "#FFCDD2"
+      style.stroke: "#C62828"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Reflect\n5 sub-agencies
+    }
+  }
+
+  community: Community + Entertainment {
+    style.fill: "#E8F5E9"
+    style.stroke: "#2E7D32"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 12
+
+    nigel: N.I.G.E.L / S.P.A.R.K. {
+      icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
+      style.fill: "#C8E6C9"
+      style.stroke: "#2E7D32"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: N.I.G.E.L / S.P.A.R.K.\nRAG + Claude
+    }
+
+    charm: C.H.A.R.M. {
+      icon: https://icons.terrastruct.com/dev%2Freact.svg
+      style.fill: "#C8E6C9"
+      style.stroke: "#2E7D32"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: C.H.A.R.M.\nReact Native RPG
+    }
+
+    ketaflix: Ketaflix {
+      icon: https://icons.terrastruct.com/dev%2Freact.svg
+      style.fill: "#C8E6C9"
+      style.stroke: "#2E7D32"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Ketaflix\nNext.js 15 PWA
+    }
+  }
+
+  paused: Paused {
+    style.fill: "#F5F5F5"
+    style.stroke: "#9E9E9E"
+    style.bold: true
+    style.border-radius: 12
+    style.stroke-dash: 5
+
+    novo: Novo Email Campaign {
+      style.fill: "#EEEEEE"
+      style.stroke: "#9E9E9E"
+      style.bold: true
+      style.border-radius: 8
+      label: Novo Email Campaign\nResend + Gmail API
+    }
+
+    portfolio: Portfolio Site {
+      style.fill: "#EEEEEE"
+      style.stroke: "#9E9E9E"
+      style.bold: true
+      style.border-radius: 8
+    }
+  }
+}
+
+# ============================================================
+# ROW 3: SHARED SERVICES (Grid Layout)
+# ============================================================
+
+shared: Shared Services {
+  grid-columns: 4
+  style.fill: "#F3E8FF"
+  style.stroke: "#7C3AED"
+  style.bold: true
+  style.shadow: true
+  style.border-radius: 12
+
+  railway: Railway {
+    style.fill: "#EDE7F6"
+    style.stroke: "#7C3AED"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    icon: https://icons.terrastruct.com/tech%2F022-server.svg
+    label: Railway\n10 projects
+  }
+
+  supabase: Supabase {
+    style.fill: "#E6F4EA"
+    style.stroke: "#34A853"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+    label: Supabase\n6 projects | 2 accounts
+  }
+
+  netlify: Netlify {
+    style.fill: "#E0F2F1"
+    style.stroke: "#00897B"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Netlify\n23 sites
+  }
+
+  doppler: Doppler {
+    style.fill: "#FFF9C4"
+    style.stroke: "#F9A825"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Doppler\n7 projects
+  }
+
+  discord_svc: Discord {
+    style.fill: "#E8EAF6"
+    style.stroke: "#5865F2"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Discord\n5+ bots
+  }
+
+  sheets: Google Sheets {
+    style.fill: "#E8F5E9"
+    style.stroke: "#43A047"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Google Sheets\n4 trackers
+  }
+
+  apps_script: Apps Script {
+    style.fill: "#E8F5E9"
+    style.stroke: "#43A047"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Apps Script\n2 deployments
+  }
+
+  github: GitHub {
+    style.fill: "#F5F5F5"
+    style.stroke: "#424242"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+    label: GitHub\nspencer-life
+  }
+}
+
+# ============================================================
+# CONNECTIONS: Projects -> Shared Services
+# ============================================================
+
+# Insurance AI -> Railway, Supabase, Doppler
+row1.insurance -> shared.railway: {
+  style.stroke: "#1565C0"
+  style.stroke-width: 2
+}
+row1.insurance -> shared.supabase: {
+  style.stroke: "#1565C0"
+  style.stroke-width: 2
+}
+row1.insurance -> shared.doppler: {
+  style.stroke: "#1565C0"
+  style.stroke-width: 2
+}
+
+# WarRoom -> Railway, Discord, Sheets
+row1.warroom -> shared.railway: {
+  style.stroke: "#E65100"
+  style.stroke-width: 2
+}
+row1.warroom -> shared.discord_svc: {
+  style.stroke: "#E65100"
+  style.stroke-width: 2
+}
+row1.warroom -> shared.sheets: {
+  style.stroke: "#E65100"
+  style.stroke-width: 2
+}
+
+# Agency Submissions -> Netlify, Apps Script, Sheets
+row2.submissions -> shared.netlify: {
+  style.stroke: "#C62828"
+  style.stroke-width: 2
+}
+row2.submissions -> shared.apps_script: {
+  style.stroke: "#C62828"
+  style.stroke-width: 2
+}
+row2.submissions -> shared.sheets: {
+  style.stroke: "#C62828"
+  style.stroke-width: 2
+}
+
+# Community -> Railway, Supabase, Netlify, Discord
+row2.community -> shared.railway: {
+  style.stroke: "#2E7D32"
+  style.stroke-width: 2
+}
+row2.community -> shared.supabase: {
+  style.stroke: "#2E7D32"
+  style.stroke-width: 2
+}
+row2.community -> shared.netlify: {
+  style.stroke: "#2E7D32"
+  style.stroke-width: 2
+}
+row2.community -> shared.discord_svc: {
+  style.stroke: "#2E7D32"
+  style.stroke-width: 2
+}
+
+# Paused -> Supabase, Netlify (lighter connections)
+row2.paused -> shared.supabase: {
+  style.stroke: "#9E9E9E"
+  style.stroke-dash: 5
+}
+row2.paused -> shared.netlify: {
+  style.stroke: "#9E9E9E"
+  style.stroke-dash: 5
+}
+
+# All projects -> GitHub
+row1.insurance -> shared.github: {
+  style.stroke: "#424242"
+  style.stroke-dash: 3
+}
+row1.warroom -> shared.github: {
+  style.stroke: "#424242"
+  style.stroke-dash: 3
+}
+row2.community -> shared.github: {
+  style.stroke: "#424242"
+  style.stroke-dash: 3
+}

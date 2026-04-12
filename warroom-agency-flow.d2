@@ -1,0 +1,244 @@
+# WarRoom Agency Submission Pipeline
+# End-to-end flow from agency submissions to Discord leaderboards
+
+direction: down
+
+vars: {
+  svc: "#E8F0FE"
+  db: "#E6F4EA"
+  ext: "#FFF3E0"
+  deploy: "#F3E8FF"
+  discord: "#E8EAF6"
+}
+
+classes: {
+  service: {
+    style.fill: ${svc}
+    style.stroke: "#1A73E8"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+  database: {
+    shape: cylinder
+    style.fill: ${db}
+    style.stroke: "#34A853"
+    style.bold: true
+    style.shadow: true
+  }
+  external: {
+    style.fill: ${ext}
+    style.stroke: "#FF9800"
+    style.stroke-dash: 3
+    style.border-radius: 8
+  }
+  hosting: {
+    shape: cloud
+    style.fill: ${deploy}
+    style.stroke: "#7C3AED"
+    style.bold: true
+    style.shadow: true
+  }
+  bot: {
+    style.fill: ${discord}
+    style.stroke: "#5865F2"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+}
+
+# --- Agency Hierarchy ---
+
+agencies: Agency Hierarchy {
+  style.fill: "#FFF3E0"
+  style.stroke: "#FF9800"
+  style.bold: true
+  style.border-radius: 12
+
+  execute: Execute Financial {
+    style.fill: "#FFECB3"
+    style.stroke: "#F57C00"
+    style.bold: true
+    style.border-radius: 8
+
+    sentinel: Sentinel
+    ascend: Ascend
+    nitehawk: Nitehawk
+  }
+
+  diligence: Diligence {
+    style.fill: "#FFECB3"
+    style.stroke: "#F57C00"
+    style.bold: true
+    style.border-radius: 8
+
+    grand: Grand Capital
+    highcaliber: High Caliber Agencies
+    mentality: Mentality Agencies
+    desire: Desire Agencies
+    more: +7 more {
+      style.fill: "#FFE0B2"
+      style.stroke: "#EF6C00"
+      style.font-size: 12
+      style.border-radius: 4
+    }
+  }
+
+  reflect: Reflect {
+    style.fill: "#FFECB3"
+    style.stroke: "#F57C00"
+    style.bold: true
+    style.border-radius: 8
+
+    vault: Vault
+    palace: Palace
+    enrich: Enrich
+    krafted: Krafted
+    cridland: Cridland Coverage
+  }
+}
+
+# --- Submission Forms ---
+
+submission: Submission {
+  style.fill: "#F3E8FF"
+  style.stroke: "#7C3AED"
+  style.bold: true
+  style.border-radius: 12
+
+  forms: Netlify Submission Forms {
+    shape: cloud
+    style.fill: ${deploy}
+    style.stroke: "#7C3AED"
+    style.bold: true
+    style.shadow: true
+
+    exec_form: Execute Form
+    dil_form: Diligence Form
+    ref_form: Reflect Form
+  }
+}
+
+# --- Processing ---
+
+processing: Processing {
+  style.fill: "#E8F0FE"
+  style.stroke: "#1A73E8"
+  style.bold: true
+  style.border-radius: 12
+
+  apps_script: Google Apps Script\n(doPost() endpoints) {
+    class: service
+    style.3d: true
+  }
+
+  sheets: Google Sheets\n(Master Trackers) {
+    class: service
+    style.3d: true
+    icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+  }
+
+  apps_script -> sheets: writes data {
+    style.stroke: "#1A73E8"
+  }
+}
+
+# --- Discord Bots ---
+
+bots: Discord Bots {
+  icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
+  style.fill: "#E8EAF6"
+  style.stroke: "#5865F2"
+  style.bold: true
+  style.border-radius: 12
+
+  leaderboard: Leaderboard Bot {
+    class: bot
+    style.3d: true
+    label: Leaderboard Bot\n(Railway: unique-imagination)
+  }
+
+  warai: war-room-ai {
+    class: bot
+    style.3d: true
+    label: war-room-ai\n(Railway: authentic-passion)
+  }
+
+  wrengine: WarRoomEngine Bot {
+    class: bot
+    style.3d: true
+    label: WarRoomEngine Bot\n(Railway PostgreSQL)
+  }
+
+  licbot: Licensing Bot {
+    class: bot
+    style.3d: true
+    label: Licensing Bot\n(Recruit Pipeline)
+  }
+}
+
+# --- Output ---
+
+output: Output {
+  style.fill: "#E8EAF6"
+  style.stroke: "#5865F2"
+  style.bold: true
+  style.border-radius: 12
+
+  webhooks: Discord Webhooks {
+    class: bot
+
+    live: Live Wins
+    daily: Daily Reports
+    weekly: Weekly Reports
+    monthly: Monthly Reports
+  }
+}
+
+# --- Connections ---
+
+agencies.execute -> submission.forms.exec_form: submits {
+  style.stroke: "#F57C00"
+  style.stroke-width: 2
+}
+
+agencies.diligence -> submission.forms.dil_form: submits {
+  style.stroke: "#F57C00"
+  style.stroke-width: 2
+}
+
+agencies.reflect -> submission.forms.ref_form: submits {
+  style.stroke: "#F57C00"
+  style.stroke-width: 2
+}
+
+submission.forms -> processing.apps_script: POST {
+  style.stroke: "#7C3AED"
+  style.stroke-width: 2
+}
+
+processing.sheets -> bots.leaderboard: reads data {
+  style.stroke: "#1A73E8"
+  style.stroke-width: 2
+}
+
+bots.warai -> output.webhooks: posts updates {
+  style.stroke: "#5865F2"
+  style.stroke-width: 2
+}
+
+bots.wrengine -> output.webhooks: posts updates {
+  style.stroke: "#5865F2"
+  style.stroke-width: 2
+}
+
+bots.licbot -> output.webhooks: posts updates {
+  style.stroke: "#5865F2"
+  style.stroke-width: 2
+}
+
+bots.leaderboard -> output.webhooks: posts rankings {
+  style.stroke: "#5865F2"
+  style.stroke-width: 2
+}

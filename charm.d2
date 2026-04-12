@@ -1,0 +1,142 @@
+direction: down
+
+vars: {
+  svc: "#E8F0FE"
+  db: "#E6F4EA"
+  ext: "#FFF3E0"
+  deploy: "#F3E8FF"
+  discord: "#E8EAF6"
+}
+
+classes: {
+  service: {
+    style.fill: ${svc}
+    style.stroke: "#1A73E8"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+  database: {
+    shape: cylinder
+    style.fill: ${db}
+    style.stroke: "#34A853"
+    style.bold: true
+    style.shadow: true
+  }
+  external: {
+    style.fill: ${ext}
+    style.stroke: "#FF9800"
+    style.stroke-dash: 3
+    style.border-radius: 8
+  }
+  hosting: {
+    shape: cloud
+    style.fill: ${deploy}
+    style.stroke: "#7C3AED"
+    style.bold: true
+    style.shadow: true
+  }
+  bot: {
+    style.fill: ${discord}
+    style.stroke: "#5865F2"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+}
+
+# ── Frontend ──
+Frontend: "Frontend" {
+  icon: https://icons.terrastruct.com/dev%2Freact.svg
+  style.fill: "#F8F9FA"
+  style.stroke: "#1A73E8"
+  style.border-radius: 12
+  style.shadow: true
+
+  Mobile: "React Native Expo\nMobile + Web" {
+    class: service
+  }
+
+  Netlify: "Netlify\nthecharmmodel.com" {
+    class: hosting
+  }
+}
+
+# ── Backend ──
+Backend: "Backend" {
+  icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
+  style.fill: "#F8F9FA"
+  style.stroke: "#1A73E8"
+  style.border-radius: 12
+  style.shadow: true
+
+  Express: "Express.js API\nRailway" {
+    class: service
+    icon: https://icons.terrastruct.com/tech%2F022-server.svg
+  }
+}
+
+# ── Database Layer ──
+Database: "Database Layer" {
+  style.fill: "#F8F9FA"
+  style.stroke: "#34A853"
+  style.border-radius: 12
+  style.shadow: true
+
+  MongoDB: "MongoDB\nUser Auth" {
+    class: database
+  }
+
+  Supabase: "Supabase\nC.H.A.R.M Project\nGame Data + Knowledge Base" {
+    class: database
+    icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+  }
+}
+
+# ── Sub-Projects ──
+SubProjects: "Sub-Projects" {
+  style.fill: "#F8F9FA"
+  style.stroke: "#7C3AED"
+  style.border-radius: 12
+  style.shadow: true
+
+  Anims: "CHARM-animations" {
+    class: service
+    style.multiple: true
+  }
+
+  Boss: "CHARM-boss-battles" {
+    class: service
+    style.multiple: true
+  }
+
+  Theme: "CHARM-theme" {
+    class: service
+    style.multiple: true
+  }
+}
+
+# ── Config ──
+Config: "Config" {
+  style.fill: "#F8F9FA"
+  style.stroke: "#7C3AED"
+  style.border-radius: 12
+  style.shadow: true
+
+  Doppler: "Doppler\ncharm" {
+    class: service
+    style.fill: "#F3E8FF"
+  }
+
+  Discord: "Discord Integration" {
+    class: bot
+  }
+}
+
+# ── Connections ──
+Frontend.Mobile -> Backend.Express: API calls
+Backend.Express -> Database.MongoDB: auth
+Backend.Express -> Database.Supabase: game data
+Frontend.Mobile -> Frontend.Netlify: serves
+SubProjects -> Backend.Express: extends
+Config.Doppler -> Backend.Express: secrets

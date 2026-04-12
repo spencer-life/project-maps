@@ -1,0 +1,131 @@
+direction: down
+
+vars: {
+  svc: "#E8F0FE"
+  db: "#E6F4EA"
+  ext: "#FFF3E0"
+  deploy: "#F3E8FF"
+  discord: "#E8EAF6"
+}
+
+classes: {
+  service: {
+    style.fill: ${svc}
+    style.stroke: "#1A73E8"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+  database: {
+    shape: cylinder
+    style.fill: ${db}
+    style.stroke: "#34A853"
+    style.bold: true
+    style.shadow: true
+  }
+  external: {
+    style.fill: ${ext}
+    style.stroke: "#FF9800"
+    style.stroke-dash: 3
+    style.border-radius: 8
+  }
+  hosting: {
+    shape: cloud
+    style.fill: ${deploy}
+    style.stroke: "#7C3AED"
+    style.bold: true
+    style.shadow: true
+  }
+  bot: {
+    style.fill: ${discord}
+    style.stroke: "#5865F2"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+}
+
+# ── Discord Server ──
+Discord: "Discord Server" {
+  style.fill: "#F8F9FA"
+  style.stroke: "#5865F2"
+  style.border-radius: 12
+  style.shadow: true
+
+  User: "Agent / User" {
+    shape: person
+    style.fill: "#E8EAF6"
+    style.stroke: "#5865F2"
+  }
+
+  Slash: "Slash Commands\n/case  /ask  /lookup\n/compare  /buildcheck" {
+    class: bot
+  }
+}
+
+# ── Bot Container ──
+Bot: "Insurance UW Bot (Python)" {
+  icon: https://icons.terrastruct.com/dev%2Fpython.svg
+  style.fill: "#F8F9FA"
+  style.stroke: "#1A73E8"
+  style.border-radius: 12
+  style.shadow: true
+
+  Agent: "Claude AI Agent\nSonnet 4.6 + Haiku 4.5" {
+    class: service
+  }
+
+  Tools: "11 Agent Tools\nStructured Queries\nVector Search\nCarrier Selector" {
+    class: service
+  }
+}
+
+# ── Data Layer ──
+Data: "Data Layer" {
+  style.fill: "#F8F9FA"
+  style.stroke: "#34A853"
+  style.border-radius: 12
+  style.shadow: true
+
+  RailwayPG: "Railway PostgreSQL\n9 carriers, 32 products\n902 rules, 312 meds" {
+    class: database
+    icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+  }
+
+  SupaPG: "Supabase pgvector\nAlt Account\nGuideline Embeddings" {
+    class: database
+    icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+  }
+
+  OpenAI: "OpenAI Embeddings\ntext-embedding-3-small" {
+    class: external
+  }
+}
+
+# ── Deployment ──
+Deploy: "Deployment" {
+  style.fill: "#F8F9FA"
+  style.stroke: "#7C3AED"
+  style.border-radius: 12
+  style.shadow: true
+
+  Railway: "Railway\nAuto-deploy from GitHub" {
+    class: hosting
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+  }
+
+  Doppler: "Doppler\nspencer-main / dev_personal" {
+    class: service
+    style.fill: "#F3E8FF"
+  }
+}
+
+# ── Connections ──
+Discord.User -> Discord.Slash: interacts
+Discord.Slash -> Bot.Agent: triggers
+Bot.Agent -> Bot.Tools
+Bot.Tools -> Data.RailwayPG: queries
+Bot.Tools -> Data.SupaPG: vector search
+Data.OpenAI -> Data.SupaPG: generates embeddings
+Deploy.Doppler -> Deploy.Railway: secrets
+Deploy.Railway -> Bot: deploys

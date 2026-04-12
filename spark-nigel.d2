@@ -1,0 +1,193 @@
+# S.P.A.R.K. + N.I.G.E.L Architecture
+# Discord community platform with AI-powered coaching bot
+
+direction: down
+
+vars: {
+  svc: "#E8F0FE"
+  db: "#E6F4EA"
+  ext: "#FFF3E0"
+  deploy: "#F3E8FF"
+  discord: "#E8EAF6"
+}
+
+classes: {
+  service: {
+    style.fill: ${svc}
+    style.stroke: "#1A73E8"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+  database: {
+    shape: cylinder
+    style.fill: ${db}
+    style.stroke: "#34A853"
+    style.bold: true
+    style.shadow: true
+  }
+  external: {
+    style.fill: ${ext}
+    style.stroke: "#FF9800"
+    style.stroke-dash: 3
+    style.border-radius: 8
+  }
+  hosting: {
+    shape: cloud
+    style.fill: ${deploy}
+    style.stroke: "#7C3AED"
+    style.bold: true
+    style.shadow: true
+  }
+  bot: {
+    style.fill: ${discord}
+    style.stroke: "#5865F2"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 8
+  }
+}
+
+# --- Discord Community ---
+
+discord: Discord (S.P.A.R.K.) {
+  style.fill: "#E8EAF6"
+  style.stroke: "#5865F2"
+  style.bold: true
+  style.shadow: true
+  style.border-radius: 12
+
+  members: Community Members {
+    shape: person
+    style.fill: "#E8EAF6"
+    style.stroke: "#5865F2"
+  }
+
+  commands: Bot Commands {
+    class: bot
+
+    daily: Daily Drills {
+      class: bot
+    }
+    doctrine: Doctrine Q&A {
+      class: bot
+    }
+    metrics: Authority Metrics {
+      class: bot
+    }
+  }
+
+  members -> commands: interacts with
+}
+
+# --- N.I.G.E.L Bot ---
+
+nigel: N.I.G.E.L Bot (TypeScript) {
+  icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
+  style.fill: "#E8F0FE"
+  style.stroke: "#1A73E8"
+  style.bold: true
+  style.shadow: true
+  style.border-radius: 12
+
+  agents: 8 Specialized Agents {
+    class: service
+    style.3d: true
+  }
+
+  skills: 12 Reusable Skills {
+    class: service
+    style.3d: true
+  }
+
+  rag: RAG Pipeline (LangChain) {
+    class: service
+    style.fill: "#FCE4EC"
+    style.stroke: "#E91E63"
+  }
+
+  agents -> skills: delegates to
+  agents -> rag: queries
+}
+
+# --- AI Layer ---
+
+ai: AI Layer {
+  style.fill: "#FFF8E1"
+  style.stroke: "#FF9800"
+  style.bold: true
+  style.border-radius: 12
+
+  claude: Anthropic Claude {
+    class: external
+    style.3d: true
+  }
+
+  gemini: Google Generative AI {
+    class: external
+    style.3d: true
+  }
+}
+
+# --- Data Layer ---
+
+data: Data {
+  style.fill: "#E6F4EA"
+  style.stroke: "#34A853"
+  style.bold: true
+  style.border-radius: 12
+
+  supabase: Supabase NIGEL\n(Knowledge Base) {
+    class: database
+    icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+  }
+}
+
+# --- Deploy ---
+
+deploy: Deploy {
+  style.fill: "#F3E8FF"
+  style.stroke: "#7C3AED"
+  style.bold: true
+  style.border-radius: 12
+
+  railway: Railway\n(just-wisdom) {
+    class: hosting
+  }
+
+  netlify: Netlify {
+    style.multiple: true
+    class: hosting
+
+    console: nigel-console
+    authority: authority-metrics
+  }
+}
+
+# --- Connections ---
+
+discord.commands -> nigel.agents: triggers {
+  style.stroke: "#5865F2"
+  style.stroke-width: 2
+}
+
+nigel.rag -> data.supabase: retrieves context {
+  style.stroke: "#34A853"
+  style.stroke-width: 2
+}
+
+nigel.rag -> ai.claude: generates responses {
+  style.stroke: "#FF9800"
+  style.stroke-width: 2
+}
+
+nigel.rag -> ai.gemini: generates responses {
+  style.stroke: "#FF9800"
+  style.stroke-width: 2
+}
+
+deploy.railway -> nigel: hosts bot {
+  style.stroke: "#7C3AED"
+  style.stroke-width: 2
+  style.stroke-dash: 5
+}
