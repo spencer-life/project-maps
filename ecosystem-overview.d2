@@ -1,7 +1,7 @@
-# Spencer's Full Project Ecosystem
-# Master dashboard of all projects and shared services
+# Spencer's Full Project Ecosystem — Hub & Spoke Layout
+# Projects on left/right, shared services in the center
 
-direction: down
+direction: right
 
 vars: {
   svc: "#E8F0FE"
@@ -11,65 +11,18 @@ vars: {
   discord: "#E8EAF6"
 }
 
-classes: {
-  service: {
-    style.fill: ${svc}
-    style.stroke: "#1A73E8"
-    style.bold: true
-    style.shadow: true
-    style.border-radius: 8
-    style.font-size: 18
-  }
-  database: {
-    shape: cylinder
-    style.fill: ${db}
-    style.stroke: "#34A853"
-    style.bold: true
-    style.shadow: true
-    style.font-size: 18
-  }
-  external: {
-    style.fill: ${ext}
-    style.stroke: "#FF9800"
-    style.stroke-dash: 3
-    style.border-radius: 8
-    style.font-size: 18
-  }
-  hosting: {
-    shape: cloud
-    style.fill: ${deploy}
-    style.stroke: "#7C3AED"
-    style.bold: true
-    style.shadow: true
-    style.font-size: 18
-  }
-  bot: {
-    style.fill: ${discord}
-    style.stroke: "#5865F2"
-    style.bold: true
-    style.shadow: true
-    style.border-radius: 8
-    style.font-size: 18
-  }
-}
-
-# Top-level vertical grid forces rows to stack
-grid-columns: 1
-
 # ============================================================
-# ROW 1: Insurance AI + WarRoom Agency
+# LEFT COLUMN — Insurance AI + Agency Submissions
 # ============================================================
 
-row1: Active Products {
-  style.font-size: 22
-  grid-columns: 2
-  grid-gap: 16
-  style.fill: "#FAFAFA"
-  style.stroke: "#E0E0E0"
-  style.border-radius: 16
+col_l: " " {
+  grid-columns: 1
+  grid-gap: 24
+  style.fill: transparent
+  style.stroke: transparent
 
   insurance: Insurance AI Bots {
-    style.font-size: 20
+    style.font-size: 22
     style.fill: "#E3F2FD"
     style.stroke: "#1565C0"
     style.bold: true
@@ -103,8 +56,184 @@ row1: Active Products {
     }
   }
 
+  submissions: Agency Submissions {
+    style.font-size: 22
+    style.fill: "#FCE4EC"
+    style.stroke: "#C62828"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 12
+
+    diligence: Diligence {
+      tooltip: "11 sub-agencies, 4 submission forms"
+      style.fill: "#FFCDD2"
+      style.stroke: "#C62828"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Diligence\n11 sub-agencies
+    }
+
+    reflect: Reflect {
+      tooltip: "5 sub-agencies, 1 submission form"
+      style.fill: "#FFCDD2"
+      style.stroke: "#C62828"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Reflect\n5 sub-agencies
+    }
+  }
+}
+
+# ============================================================
+# CENTER — Shared Platform (vertical stack)
+# Services ordered to minimize crossing: top services used by
+# top projects, bottom services used by bottom projects
+# ============================================================
+
+platform: Shared Platform {
+  style.font-size: 24
+  style.fill: "#F3E8FF"
+  style.stroke: "#7C3AED"
+  style.bold: true
+  style.shadow: true
+  style.border-radius: 12
+  grid-columns: 1
+  grid-gap: 12
+
+  supabase: Supabase {
+    tooltip: "6 projects across 2 accounts"
+    style.fill: "#E6F4EA"
+    style.stroke: "#34A853"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+    label: Supabase — 6 projects | 2 accounts
+  }
+
+  railway: Railway {
+    tooltip: "10 projects, 8 with active services"
+    style.fill: "#EDE7F6"
+    style.stroke: "#7C3AED"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    icon: https://icons.terrastruct.com/tech%2F022-server.svg
+    label: Railway — 10 projects
+  }
+
+  netlify: Netlify {
+    tooltip: "23 sites, 2 custom domains"
+    style.fill: "#E0F2F1"
+    style.stroke: "#00897B"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Netlify — 23 sites
+  }
+
+  discord_svc: Discord {
+    tooltip: "5+ active bots"
+    style.fill: "#E8EAF6"
+    style.stroke: "#5865F2"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Discord — 5+ bots
+  }
+
+  sheets: Google Sheets {
+    tooltip: "4 tracked spreadsheets"
+    style.fill: "#E8F5E9"
+    style.stroke: "#43A047"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Google Sheets — 4 trackers
+  }
+
+  apps_script: Apps Script {
+    tooltip: "2 active deployments"
+    style.fill: "#E8F5E9"
+    style.stroke: "#43A047"
+    style.bold: true
+    style.shadow: true
+    style.3d: true
+    style.border-radius: 8
+    label: Apps Script — 2 deployments
+  }
+}
+
+# ============================================================
+# RIGHT COLUMN — Community + WarRoom
+# Community on top (connects to top services), WarRoom below
+# ============================================================
+
+col_r: " " {
+  grid-columns: 1
+  grid-gap: 24
+  style.fill: transparent
+  style.stroke: transparent
+
+  community: Community + Entertainment {
+    style.font-size: 22
+    style.fill: "#E8F5E9"
+    style.stroke: "#2E7D32"
+    style.bold: true
+    style.shadow: true
+    style.border-radius: 12
+
+    nigel: N.I.G.E.L / S.P.A.R.K. {
+      link: https://github.com/spencer-life/N.I.G.E.L
+      tooltip: "RAG + Claude + Gemini, 8 agents, 12 skills"
+      icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
+      style.fill: "#C8E6C9"
+      style.stroke: "#2E7D32"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: N.I.G.E.L / S.P.A.R.K.\nRAG + Claude
+    }
+
+    charm: C.H.A.R.M. {
+      link: https://thecharmmodel.com
+      tooltip: "React Native behavioral RPG"
+      icon: https://icons.terrastruct.com/dev%2Freact.svg
+      style.fill: "#C8E6C9"
+      style.stroke: "#2E7D32"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: C.H.A.R.M.\nReact Native RPG
+    }
+
+    ketaflix: Ketaflix {
+      link: https://ketaflix-app.netlify.app
+      tooltip: "Next.js 15 PWA, movie watchlist"
+      icon: https://icons.terrastruct.com/dev%2Freact.svg
+      style.fill: "#C8E6C9"
+      style.stroke: "#2E7D32"
+      style.bold: true
+      style.shadow: true
+      style.3d: true
+      style.border-radius: 8
+      label: Ketaflix\nNext.js 15 PWA
+    }
+  }
+
   warroom: WarRoom Agency {
-    style.font-size: 20
+    style.font-size: 22
     style.fill: "#FFF3E0"
     style.stroke: "#E65100"
     style.bold: true
@@ -172,311 +301,107 @@ row1: Active Products {
 }
 
 # ============================================================
-# ROW 2: Submissions + Community + Paused
+# PAUSED (footnote-style, below the main layout)
 # ============================================================
 
-row2: Additional Projects {
-  style.font-size: 22
-  grid-columns: 3
-  grid-gap: 16
-  style.fill: "#FAFAFA"
-  style.stroke: "#E0E0E0"
-  style.border-radius: 16
+paused: Paused Projects {
+  style.font-size: 18
+  style.fill: "#F5F5F5"
+  style.stroke: "#9E9E9E"
+  style.bold: true
+  style.border-radius: 12
+  style.stroke-dash: 5
 
-  submissions: Agency Submissions {
-    style.font-size: 20
-    style.fill: "#FCE4EC"
-    style.stroke: "#C62828"
-    style.bold: true
-    style.shadow: true
-    style.border-radius: 12
-
-    diligence: Diligence {
-      tooltip: "11 sub-agencies, 4 submission forms"
-      style.fill: "#FFCDD2"
-      style.stroke: "#C62828"
-      style.bold: true
-      style.shadow: true
-      style.3d: true
-      style.border-radius: 8
-      label: Diligence\n11 sub-agencies
-    }
-
-    reflect: Reflect {
-      tooltip: "5 sub-agencies, 1 submission form"
-      style.fill: "#FFCDD2"
-      style.stroke: "#C62828"
-      style.bold: true
-      style.shadow: true
-      style.3d: true
-      style.border-radius: 8
-      label: Reflect\n5 sub-agencies
-    }
-  }
-
-  community: Community + Entertainment {
-    style.font-size: 20
-    style.fill: "#E8F5E9"
-    style.stroke: "#2E7D32"
-    style.bold: true
-    style.shadow: true
-    style.border-radius: 12
-
-    nigel: N.I.G.E.L / S.P.A.R.K. {
-      link: https://github.com/spencer-life/N.I.G.E.L
-      tooltip: "RAG + Claude + Gemini, 8 agents, 12 skills"
-      icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
-      style.fill: "#C8E6C9"
-      style.stroke: "#2E7D32"
-      style.bold: true
-      style.shadow: true
-      style.3d: true
-      style.border-radius: 8
-      label: N.I.G.E.L / S.P.A.R.K.\nRAG + Claude
-    }
-
-    charm: C.H.A.R.M. {
-      link: https://thecharmmodel.com
-      tooltip: "React Native behavioral RPG"
-      icon: https://icons.terrastruct.com/dev%2Freact.svg
-      style.fill: "#C8E6C9"
-      style.stroke: "#2E7D32"
-      style.bold: true
-      style.shadow: true
-      style.3d: true
-      style.border-radius: 8
-      label: C.H.A.R.M.\nReact Native RPG
-    }
-
-    ketaflix: Ketaflix {
-      link: https://ketaflix-app.netlify.app
-      tooltip: "Next.js 15 PWA, movie watchlist"
-      icon: https://icons.terrastruct.com/dev%2Freact.svg
-      style.fill: "#C8E6C9"
-      style.stroke: "#2E7D32"
-      style.bold: true
-      style.shadow: true
-      style.3d: true
-      style.border-radius: 8
-      label: Ketaflix\nNext.js 15 PWA
-    }
-  }
-
-  paused: Paused {
-    style.font-size: 20
-    style.fill: "#F5F5F5"
+  novo: Novo Email Campaign {
+    tooltip: "Paused — Resend + Gmail API, waiting on CSV + DNS"
+    style.fill: "#EEEEEE"
     style.stroke: "#9E9E9E"
     style.bold: true
-    style.border-radius: 12
-    style.stroke-dash: 5
+    style.border-radius: 8
+    label: Novo Email Campaign\nResend + Gmail API
+  }
 
-    novo: Novo Email Campaign {
-      tooltip: "Paused — Resend + Gmail API, waiting on CSV + DNS"
-      style.fill: "#EEEEEE"
-      style.stroke: "#9E9E9E"
-      style.bold: true
-      style.border-radius: 8
-      label: Novo Email Campaign\nResend + Gmail API
-    }
-
-    portfolio: Portfolio Site {
-      tooltip: "Paused — not started"
-      style.fill: "#EEEEEE"
-      style.stroke: "#9E9E9E"
-      style.bold: true
-      style.border-radius: 8
-    }
+  portfolio: Portfolio Site {
+    tooltip: "Paused — not started"
+    style.fill: "#EEEEEE"
+    style.stroke: "#9E9E9E"
+    style.bold: true
+    style.border-radius: 8
   }
 }
 
 # ============================================================
-# ROW 3: SHARED SERVICES (Grid Layout)
+# FOOTNOTE
 # ============================================================
 
-shared: Shared Services {
-  style.font-size: 22
-  grid-columns: 4
-  style.fill: "#F3E8FF"
-  style.stroke: "#7C3AED"
+note: ||md
+  All active projects use **GitHub** (spencer-life) + **Doppler** for secrets.
+|| {
+  style.font-size: 16
+  style.fill: "#FFFDE7"
+  style.stroke: "#F9A825"
+  style.border-radius: 8
   style.bold: true
-  style.shadow: true
-  style.border-radius: 12
-
-  railway: Railway {
-    tooltip: "10 projects, 8 with active services"
-    style.fill: "#EDE7F6"
-    style.stroke: "#7C3AED"
-    style.bold: true
-    style.shadow: true
-    style.3d: true
-    style.border-radius: 8
-    icon: https://icons.terrastruct.com/tech%2F022-server.svg
-    label: Railway\n10 projects
-  }
-
-  supabase: Supabase {
-    tooltip: "6 projects across 2 accounts"
-    style.fill: "#E6F4EA"
-    style.stroke: "#34A853"
-    style.bold: true
-    style.shadow: true
-    style.3d: true
-    style.border-radius: 8
-    icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
-    label: Supabase\n6 projects | 2 accounts
-  }
-
-  netlify: Netlify {
-    tooltip: "23 sites, 2 custom domains"
-    style.fill: "#E0F2F1"
-    style.stroke: "#00897B"
-    style.bold: true
-    style.shadow: true
-    style.3d: true
-    style.border-radius: 8
-    label: Netlify\n23 sites
-  }
-
-  doppler: Doppler {
-    tooltip: "7 projects, 28 configs total"
-    style.fill: "#FFF9C4"
-    style.stroke: "#F9A825"
-    style.bold: true
-    style.shadow: true
-    style.3d: true
-    style.border-radius: 8
-    label: Doppler\n7 projects
-  }
-
-  discord_svc: Discord {
-    tooltip: "5+ active bots"
-    style.fill: "#E8EAF6"
-    style.stroke: "#5865F2"
-    style.bold: true
-    style.shadow: true
-    style.3d: true
-    style.border-radius: 8
-    label: Discord\n5+ bots
-  }
-
-  sheets: Google Sheets {
-    tooltip: "4 tracked spreadsheets"
-    style.fill: "#E8F5E9"
-    style.stroke: "#43A047"
-    style.bold: true
-    style.shadow: true
-    style.3d: true
-    style.border-radius: 8
-    label: Google Sheets\n4 trackers
-  }
-
-  apps_script: Apps Script {
-    tooltip: "2 active deployments"
-    style.fill: "#E8F5E9"
-    style.stroke: "#43A047"
-    style.bold: true
-    style.shadow: true
-    style.3d: true
-    style.border-radius: 8
-    label: Apps Script\n2 deployments
-  }
-
-  github: GitHub {
-    style.fill: "#F5F5F5"
-    style.stroke: "#424242"
-    style.bold: true
-    style.shadow: true
-    style.3d: true
-    style.border-radius: 8
-    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
-    label: GitHub\nspencer-life
-  }
 }
 
 # ============================================================
-# CONNECTIONS: Projects -> Shared Services
+# CONNECTIONS — color-coded by source project
+# Left side approaches center from the left
+# Right side approaches center from the right
 # ============================================================
 
-# Insurance AI -> Railway, Supabase, Doppler
-row1.insurance -> shared.railway: {
+# Insurance AI (blue) → Supabase, Railway
+col_l.insurance -> platform.supabase: {
   style.stroke: "#1565C0"
   style.stroke-width: 2
 }
-row1.insurance -> shared.supabase: {
-  style.stroke: "#1565C0"
-  style.stroke-width: 2
-}
-row1.insurance -> shared.doppler: {
+col_l.insurance -> platform.railway: {
   style.stroke: "#1565C0"
   style.stroke-width: 2
 }
 
-# WarRoom -> Railway, Discord, Sheets
-row1.warroom -> shared.railway: {
-  style.stroke: "#E65100"
-  style.stroke-width: 2
-}
-row1.warroom -> shared.discord_svc: {
-  style.stroke: "#E65100"
-  style.stroke-width: 2
-}
-row1.warroom -> shared.sheets: {
-  style.stroke: "#E65100"
-  style.stroke-width: 2
-}
-
-# Agency Submissions -> Netlify, Apps Script, Sheets
-row2.submissions -> shared.netlify: {
+# Submissions (red) → Netlify, Apps Script, Sheets
+col_l.submissions -> platform.netlify: {
   style.stroke: "#C62828"
   style.stroke-width: 2
 }
-row2.submissions -> shared.apps_script: {
+col_l.submissions -> platform.apps_script: {
   style.stroke: "#C62828"
   style.stroke-width: 2
 }
-row2.submissions -> shared.sheets: {
+col_l.submissions -> platform.sheets: {
   style.stroke: "#C62828"
   style.stroke-width: 2
 }
 
-# Community -> Railway, Supabase, Netlify, Discord
-row2.community -> shared.railway: {
+# Community (green) → Railway, Supabase, Netlify, Discord
+col_r.community -> platform.supabase: {
   style.stroke: "#2E7D32"
   style.stroke-width: 2
 }
-row2.community -> shared.supabase: {
+col_r.community -> platform.railway: {
   style.stroke: "#2E7D32"
   style.stroke-width: 2
 }
-row2.community -> shared.netlify: {
+col_r.community -> platform.netlify: {
   style.stroke: "#2E7D32"
   style.stroke-width: 2
 }
-row2.community -> shared.discord_svc: {
+col_r.community -> platform.discord_svc: {
   style.stroke: "#2E7D32"
   style.stroke-width: 2
 }
 
-# Paused -> Supabase, Netlify (lighter connections)
-row2.paused -> shared.supabase: {
-  style.stroke: "#9E9E9E"
-  style.stroke-dash: 5
+# WarRoom (orange) → Railway, Discord, Sheets
+col_r.warroom -> platform.railway: {
+  style.stroke: "#E65100"
+  style.stroke-width: 2
 }
-row2.paused -> shared.netlify: {
-  style.stroke: "#9E9E9E"
-  style.stroke-dash: 5
+col_r.warroom -> platform.discord_svc: {
+  style.stroke: "#E65100"
+  style.stroke-width: 2
 }
-
-# All projects -> GitHub
-row1.insurance -> shared.github: {
-  style.stroke: "#424242"
-  style.stroke-dash: 3
-}
-row1.warroom -> shared.github: {
-  style.stroke: "#424242"
-  style.stroke-dash: 3
-}
-row2.community -> shared.github: {
-  style.stroke: "#424242"
-  style.stroke-dash: 3
+col_r.warroom -> platform.sheets: {
+  style.stroke: "#E65100"
+  style.stroke-width: 2
 }

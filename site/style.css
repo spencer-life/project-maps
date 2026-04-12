@@ -101,7 +101,12 @@ h1 {
 .diagram-container object,
 .diagram-container embed {
   width: 100%;
-  min-height: 80vh;
+  min-height: 92vh;
+}
+
+.diagram-container.diagram-large object,
+.diagram-container.diagram-large embed {
+  min-height: 100vh;
 }
 
 .hint {
