@@ -18,6 +18,7 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
   database: {
     shape: cylinder
@@ -25,12 +26,14 @@ classes: {
     style.stroke: "#34A853"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   external: {
     style.fill: ${ext}
     style.stroke: "#FF9800"
     style.stroke-dash: 3
     style.border-radius: 8
+    style.font-size: 18
   }
   hosting: {
     shape: cloud
@@ -38,6 +41,7 @@ classes: {
     style.stroke: "#7C3AED"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   bot: {
     style.fill: ${discord}
@@ -45,12 +49,14 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
 }
 
 # --- Discord Community ---
 
 discord: Discord (S.P.A.R.K.) {
+  style.font-size: 22
   style.fill: "#E8EAF6"
   style.stroke: "#5865F2"
   style.bold: true
@@ -61,6 +67,7 @@ discord: Discord (S.P.A.R.K.) {
     shape: person
     style.fill: "#E8EAF6"
     style.stroke: "#5865F2"
+    tooltip: "S.P.A.R.K. Discord community"
   }
 
   commands: Bot Commands {
@@ -83,6 +90,8 @@ discord: Discord (S.P.A.R.K.) {
 # --- N.I.G.E.L Bot ---
 
 nigel: N.I.G.E.L Bot (TypeScript) {
+  style.font-size: 22
+  link: https://github.com/spencer-life/N.I.G.E.L
   icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
   style.fill: "#E8F0FE"
   style.stroke: "#1A73E8"
@@ -113,6 +122,7 @@ nigel: N.I.G.E.L Bot (TypeScript) {
 # --- AI Layer ---
 
 ai: AI Layer {
+  style.font-size: 22
   style.fill: "#FFF8E1"
   style.stroke: "#FF9800"
   style.bold: true
@@ -121,17 +131,20 @@ ai: AI Layer {
   claude: Anthropic Claude {
     class: external
     style.3d: true
+    tooltip: "Anthropic Claude — primary AI provider"
   }
 
   gemini: Google Generative AI {
     class: external
     style.3d: true
+    tooltip: "Google Generative AI — secondary provider"
   }
 }
 
 # --- Data Layer ---
 
 data: Data {
+  style.font-size: 22
   style.fill: "#E6F4EA"
   style.stroke: "#34A853"
   style.bold: true
@@ -140,12 +153,14 @@ data: Data {
   supabase: Supabase NIGEL\n(Knowledge Base) {
     class: database
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+    tooltip: "Knowledge base, primary account, us-west-2"
   }
 }
 
 # --- Deploy ---
 
 deploy: Deploy {
+  style.font-size: 22
   style.fill: "#F3E8FF"
   style.stroke: "#7C3AED"
   style.bold: true
@@ -153,14 +168,19 @@ deploy: Deploy {
 
   railway: Railway\n(just-wisdom) {
     class: hosting
+    tooltip: "just-wisdom project"
   }
 
   netlify: Netlify {
     style.multiple: true
     class: hosting
 
-    console: nigel-console
-    authority: authority-metrics
+    console: nigel-console {
+      link: https://nigel-console.netlify.app
+    }
+    authority: authority-metrics {
+      link: https://authority-metrics.netlify.app
+    }
   }
 }
 

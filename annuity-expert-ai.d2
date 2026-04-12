@@ -15,6 +15,7 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
   database: {
     shape: cylinder
@@ -22,12 +23,14 @@ classes: {
     style.stroke: "#34A853"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   external: {
     style.fill: ${ext}
     style.stroke: "#FF9800"
     style.stroke-dash: 3
     style.border-radius: 8
+    style.font-size: 18
   }
   hosting: {
     shape: cloud
@@ -35,6 +38,7 @@ classes: {
     style.stroke: "#7C3AED"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   bot: {
     style.fill: ${discord}
@@ -42,21 +46,25 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
 }
 
 # ── Clients ──
 Clients: "Clients" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#5865F2"
   style.border-radius: 12
   style.shadow: true
 
   DiscordBot: "Discord Bot" {
+    tooltip: "Slash command interface for agents"
     class: bot
   }
 
   WebUI: "Next.js Frontend\nNetlify" {
+    link: https://annuity-expert-ai.netlify.app
     class: service
     icon: https://icons.terrastruct.com/dev%2Freact.svg
   }
@@ -64,13 +72,15 @@ Clients: "Clients" {
 
 # ── FastAPI Backend ──
 Backend: "FastAPI Backend (Python)" {
+  style.font-size: 20
+  link: https://github.com/spencer-life/annuity-expert-ai
   icon: https://icons.terrastruct.com/dev%2Fpython.svg
   style.fill: "#F8F9FA"
   style.stroke: "#1A73E8"
   style.border-radius: 12
   style.shadow: true
 
-  Agent: "Claude AI Agent\n16 Tools" {
+  Agent: "Claude AI Agent\nSonnet 4 | 16 Tools" {
     class: service
   }
 
@@ -81,17 +91,20 @@ Backend: "FastAPI Backend (Python)" {
 
 # ── Data Layer ──
 Data: "Data Layer" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#34A853"
   style.border-radius: 12
   style.shadow: true
 
   RailwayPG: "Railway PostgreSQL\n19 carriers\nCrediting strategies\nMYGA rates" {
+    tooltip: "19 carriers, crediting strategies, MYGA rates"
     class: database
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
   }
 
   SupaPG: "Supabase pgvector\nAlt Account" {
+    tooltip: "Alt account, shared with UW Bot"
     class: database
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
   }
@@ -99,12 +112,14 @@ Data: "Data Layer" {
 
 # ── External APIs ──
 External: "External APIs" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#FF9800"
   style.border-radius: 12
   style.shadow: true
 
   FRED: "FRED API\nEconomic Indicators" {
+    link: https://fred.stlouisfed.org
     class: external
   }
 
@@ -112,7 +127,7 @@ External: "External APIs" {
     class: external
   }
 
-  OpenAI: "OpenAI Embeddings" {
+  OpenAI: "OpenAI Embeddings\ntext-embedding-3-small" {
     class: external
   }
 }

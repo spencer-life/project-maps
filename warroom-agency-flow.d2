@@ -18,6 +18,7 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
   database: {
     shape: cylinder
@@ -25,12 +26,14 @@ classes: {
     style.stroke: "#34A853"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   external: {
     style.fill: ${ext}
     style.stroke: "#FF9800"
     style.stroke-dash: 3
     style.border-radius: 8
+    style.font-size: 18
   }
   hosting: {
     shape: cloud
@@ -38,6 +41,7 @@ classes: {
     style.stroke: "#7C3AED"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   bot: {
     style.fill: ${discord}
@@ -45,22 +49,26 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
 }
 
 # --- Agency Hierarchy ---
 
 agencies: Agency Hierarchy {
+  style.font-size: 22
   style.fill: "#FFF3E0"
   style.stroke: "#FF9800"
   style.bold: true
   style.border-radius: 12
 
   execute: Execute Financial {
+    style.font-size: 20
     style.fill: "#FFECB3"
     style.stroke: "#F57C00"
     style.bold: true
     style.border-radius: 8
+    tooltip: "3 top-level agencies: Sentinel, Ascend, Nitehawk"
 
     sentinel: Sentinel
     ascend: Ascend
@@ -68,10 +76,12 @@ agencies: Agency Hierarchy {
   }
 
   diligence: Diligence {
+    style.font-size: 20
     style.fill: "#FFECB3"
     style.stroke: "#F57C00"
     style.bold: true
     style.border-radius: 8
+    tooltip: "11 sub-agencies total"
 
     grand: Grand Capital
     highcaliber: High Caliber Agencies
@@ -86,10 +96,12 @@ agencies: Agency Hierarchy {
   }
 
   reflect: Reflect {
+    style.font-size: 20
     style.fill: "#FFECB3"
     style.stroke: "#F57C00"
     style.bold: true
     style.border-radius: 8
+    tooltip: "5 sub-agencies total"
 
     vault: Vault
     palace: Palace
@@ -102,27 +114,36 @@ agencies: Agency Hierarchy {
 # --- Submission Forms ---
 
 submission: Submission {
+  style.font-size: 22
   style.fill: "#F3E8FF"
   style.stroke: "#7C3AED"
   style.bold: true
   style.border-radius: 12
 
   forms: Netlify Submission Forms {
+    style.font-size: 20
     shape: cloud
     style.fill: ${deploy}
     style.stroke: "#7C3AED"
     style.bold: true
     style.shadow: true
 
-    exec_form: Execute Form
-    dil_form: Diligence Form
-    ref_form: Reflect Form
+    exec_form: Execute Form {
+      link: https://leaderboard-submit.netlify.app
+    }
+    dil_form: Diligence Form {
+      link: https://diligence-agencies.netlify.app
+    }
+    ref_form: Reflect Form {
+      link: https://reflect.warroomsystems.com
+    }
   }
 }
 
 # --- Processing ---
 
 processing: Processing {
+  style.font-size: 22
   style.fill: "#E8F0FE"
   style.stroke: "#1A73E8"
   style.bold: true
@@ -131,12 +152,14 @@ processing: Processing {
   apps_script: Google Apps Script\n(doPost() endpoints) {
     class: service
     style.3d: true
+    tooltip: "2 active deployments (Execute Financial + Diligence)"
   }
 
   sheets: Google Sheets\n(Master Trackers) {
     class: service
     style.3d: true
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+    tooltip: "4 tracked spreadsheets"
   }
 
   apps_script -> sheets: writes data {
@@ -147,6 +170,7 @@ processing: Processing {
 # --- Discord Bots ---
 
 bots: Discord Bots {
+  style.font-size: 22
   icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
   style.fill: "#E8EAF6"
   style.stroke: "#5865F2"
@@ -157,37 +181,60 @@ bots: Discord Bots {
     class: bot
     style.3d: true
     label: Leaderboard Bot\n(Railway: unique-imagination)
+    tooltip: "Railway: unique-imagination"
   }
 
   warai: war-room-ai {
     class: bot
     style.3d: true
     label: war-room-ai\n(Railway: authentic-passion)
+    tooltip: "Railway: authentic-passion, Agency management + Gemini AI"
   }
 
   wrengine: WarRoomEngine Bot {
     class: bot
     style.3d: true
     label: WarRoomEngine Bot\n(Railway PostgreSQL)
+    tooltip: "Railway PostgreSQL, admin + onboarding"
   }
 
   licbot: Licensing Bot {
     class: bot
     style.3d: true
     label: Licensing Bot\n(Recruit Pipeline)
+    tooltip: "Recruit pipeline, Railway: surprising-renewal (NO DEPLOY)"
+  }
+}
+
+# --- AI Layer ---
+
+ai: AI Layer {
+  style.font-size: 22
+  style.fill: "#FFF8E1"
+  style.stroke: "#FF9800"
+  style.bold: true
+  style.border-radius: 12
+
+  gemini: Google Gemini {
+    class: external
+    style.3d: true
+    tooltip: "Google Gemini — powers war-room-ai and Execute Financial bots"
   }
 }
 
 # --- Output ---
 
 output: Output {
+  style.font-size: 22
   style.fill: "#E8EAF6"
   style.stroke: "#5865F2"
   style.bold: true
   style.border-radius: 12
 
   webhooks: Discord Webhooks {
+    style.font-size: 20
     class: bot
+    tooltip: "Live Wins, Daily, Weekly, Monthly leaderboard posts"
 
     live: Live Wins
     daily: Daily Reports
@@ -240,5 +287,10 @@ bots.licbot -> output.webhooks: posts updates {
 
 bots.leaderboard -> output.webhooks: posts rankings {
   style.stroke: "#5865F2"
+  style.stroke-width: 2
+}
+
+ai.gemini -> bots.warai: powers AI {
+  style.stroke: "#FF9800"
   style.stroke-width: 2
 }

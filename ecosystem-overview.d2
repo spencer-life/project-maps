@@ -18,6 +18,7 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
   database: {
     shape: cylinder
@@ -25,12 +26,14 @@ classes: {
     style.stroke: "#34A853"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   external: {
     style.fill: ${ext}
     style.stroke: "#FF9800"
     style.stroke-dash: 3
     style.border-radius: 8
+    style.font-size: 18
   }
   hosting: {
     shape: cloud
@@ -38,6 +41,7 @@ classes: {
     style.stroke: "#7C3AED"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   bot: {
     style.fill: ${discord}
@@ -45,6 +49,7 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
 }
 
@@ -56,6 +61,7 @@ grid-columns: 1
 # ============================================================
 
 row1: Active Products {
+  style.font-size: 22
   grid-columns: 2
   grid-gap: 16
   style.fill: "#FAFAFA"
@@ -63,6 +69,7 @@ row1: Active Products {
   style.border-radius: 16
 
   insurance: Insurance AI Bots {
+    style.font-size: 20
     style.fill: "#E3F2FD"
     style.stroke: "#1565C0"
     style.bold: true
@@ -70,6 +77,8 @@ row1: Active Products {
     style.border-radius: 12
 
     uwbot: Insurance UW Bot {
+      link: https://github.com/spencer-life/insurance-uw-bot
+      tooltip: "Python + Claude Sonnet 4 + Haiku 4.5, 9 carriers, 545 tests"
       icon: https://icons.terrastruct.com/dev%2Fpython.svg
       style.fill: "#BBDEFB"
       style.stroke: "#1565C0"
@@ -81,6 +90,8 @@ row1: Active Products {
     }
 
     annuity: Annuity Expert AI {
+      link: https://github.com/spencer-life/annuity-expert-ai
+      tooltip: "Python + FastAPI + Claude Sonnet 4, 19 carriers, 184 tests"
       icon: https://icons.terrastruct.com/dev%2Fpython.svg
       style.fill: "#BBDEFB"
       style.stroke: "#1565C0"
@@ -93,6 +104,7 @@ row1: Active Products {
   }
 
   warroom: WarRoom Agency {
+    style.font-size: 20
     style.fill: "#FFF3E0"
     style.stroke: "#E65100"
     style.bold: true
@@ -100,6 +112,7 @@ row1: Active Products {
     style.border-radius: 12
 
     execute: Execute Financial {
+      tooltip: "Discord.js + Google Gemini, 13 agencies"
       icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
       style.fill: "#FFE0B2"
       style.stroke: "#E65100"
@@ -111,6 +124,7 @@ row1: Active Products {
     }
 
     warai: war-room-ai {
+      tooltip: "Agency management + Google Gemini"
       icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
       style.fill: "#FFE0B2"
       style.stroke: "#E65100"
@@ -122,6 +136,7 @@ row1: Active Products {
     }
 
     leaderboard: Leaderboard Bot {
+      tooltip: "Google Sheets integration, Railway"
       style.fill: "#FFE0B2"
       style.stroke: "#E65100"
       style.bold: true
@@ -132,6 +147,7 @@ row1: Active Products {
     }
 
     wrengine: WarRoomEngine {
+      tooltip: "PostgreSQL admin engine"
       icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
       style.fill: "#FFE0B2"
       style.stroke: "#E65100"
@@ -143,6 +159,7 @@ row1: Active Products {
     }
 
     licbot: Licensing Bot {
+      tooltip: "Recruit pipeline"
       style.fill: "#FFE0B2"
       style.stroke: "#E65100"
       style.bold: true
@@ -159,6 +176,7 @@ row1: Active Products {
 # ============================================================
 
 row2: Additional Projects {
+  style.font-size: 22
   grid-columns: 3
   grid-gap: 16
   style.fill: "#FAFAFA"
@@ -166,6 +184,7 @@ row2: Additional Projects {
   style.border-radius: 16
 
   submissions: Agency Submissions {
+    style.font-size: 20
     style.fill: "#FCE4EC"
     style.stroke: "#C62828"
     style.bold: true
@@ -173,6 +192,7 @@ row2: Additional Projects {
     style.border-radius: 12
 
     diligence: Diligence {
+      tooltip: "11 sub-agencies, 4 submission forms"
       style.fill: "#FFCDD2"
       style.stroke: "#C62828"
       style.bold: true
@@ -183,6 +203,7 @@ row2: Additional Projects {
     }
 
     reflect: Reflect {
+      tooltip: "5 sub-agencies, 1 submission form"
       style.fill: "#FFCDD2"
       style.stroke: "#C62828"
       style.bold: true
@@ -194,6 +215,7 @@ row2: Additional Projects {
   }
 
   community: Community + Entertainment {
+    style.font-size: 20
     style.fill: "#E8F5E9"
     style.stroke: "#2E7D32"
     style.bold: true
@@ -201,6 +223,8 @@ row2: Additional Projects {
     style.border-radius: 12
 
     nigel: N.I.G.E.L / S.P.A.R.K. {
+      link: https://github.com/spencer-life/N.I.G.E.L
+      tooltip: "RAG + Claude + Gemini, 8 agents, 12 skills"
       icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
       style.fill: "#C8E6C9"
       style.stroke: "#2E7D32"
@@ -212,6 +236,8 @@ row2: Additional Projects {
     }
 
     charm: C.H.A.R.M. {
+      link: https://thecharmmodel.com
+      tooltip: "React Native behavioral RPG"
       icon: https://icons.terrastruct.com/dev%2Freact.svg
       style.fill: "#C8E6C9"
       style.stroke: "#2E7D32"
@@ -223,6 +249,8 @@ row2: Additional Projects {
     }
 
     ketaflix: Ketaflix {
+      link: https://ketaflix-app.netlify.app
+      tooltip: "Next.js 15 PWA, movie watchlist"
       icon: https://icons.terrastruct.com/dev%2Freact.svg
       style.fill: "#C8E6C9"
       style.stroke: "#2E7D32"
@@ -235,6 +263,7 @@ row2: Additional Projects {
   }
 
   paused: Paused {
+    style.font-size: 20
     style.fill: "#F5F5F5"
     style.stroke: "#9E9E9E"
     style.bold: true
@@ -242,6 +271,7 @@ row2: Additional Projects {
     style.stroke-dash: 5
 
     novo: Novo Email Campaign {
+      tooltip: "Paused — Resend + Gmail API, waiting on CSV + DNS"
       style.fill: "#EEEEEE"
       style.stroke: "#9E9E9E"
       style.bold: true
@@ -250,6 +280,7 @@ row2: Additional Projects {
     }
 
     portfolio: Portfolio Site {
+      tooltip: "Paused — not started"
       style.fill: "#EEEEEE"
       style.stroke: "#9E9E9E"
       style.bold: true
@@ -263,6 +294,7 @@ row2: Additional Projects {
 # ============================================================
 
 shared: Shared Services {
+  style.font-size: 22
   grid-columns: 4
   style.fill: "#F3E8FF"
   style.stroke: "#7C3AED"
@@ -271,6 +303,7 @@ shared: Shared Services {
   style.border-radius: 12
 
   railway: Railway {
+    tooltip: "10 projects, 8 with active services"
     style.fill: "#EDE7F6"
     style.stroke: "#7C3AED"
     style.bold: true
@@ -282,6 +315,7 @@ shared: Shared Services {
   }
 
   supabase: Supabase {
+    tooltip: "6 projects across 2 accounts"
     style.fill: "#E6F4EA"
     style.stroke: "#34A853"
     style.bold: true
@@ -293,6 +327,7 @@ shared: Shared Services {
   }
 
   netlify: Netlify {
+    tooltip: "23 sites, 2 custom domains"
     style.fill: "#E0F2F1"
     style.stroke: "#00897B"
     style.bold: true
@@ -303,6 +338,7 @@ shared: Shared Services {
   }
 
   doppler: Doppler {
+    tooltip: "7 projects, 28 configs total"
     style.fill: "#FFF9C4"
     style.stroke: "#F9A825"
     style.bold: true
@@ -313,6 +349,7 @@ shared: Shared Services {
   }
 
   discord_svc: Discord {
+    tooltip: "5+ active bots"
     style.fill: "#E8EAF6"
     style.stroke: "#5865F2"
     style.bold: true
@@ -323,6 +360,7 @@ shared: Shared Services {
   }
 
   sheets: Google Sheets {
+    tooltip: "4 tracked spreadsheets"
     style.fill: "#E8F5E9"
     style.stroke: "#43A047"
     style.bold: true
@@ -333,6 +371,7 @@ shared: Shared Services {
   }
 
   apps_script: Apps Script {
+    tooltip: "2 active deployments"
     style.fill: "#E8F5E9"
     style.stroke: "#43A047"
     style.bold: true

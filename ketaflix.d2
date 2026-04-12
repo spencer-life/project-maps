@@ -15,6 +15,7 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
   database: {
     shape: cylinder
@@ -22,12 +23,14 @@ classes: {
     style.stroke: "#34A853"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   external: {
     style.fill: ${ext}
     style.stroke: "#FF9800"
     style.stroke-dash: 3
     style.border-radius: 8
+    style.font-size: 18
   }
   hosting: {
     shape: cloud
@@ -35,6 +38,7 @@ classes: {
     style.stroke: "#7C3AED"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   bot: {
     style.fill: ${discord}
@@ -42,11 +46,14 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
 }
 
 # ── App ──
 App: "Ketaflix PWA" {
+  style.font-size: 20
+  link: https://github.com/spencer-life/ketaflix
   icon: https://icons.terrastruct.com/dev%2Freact.svg
   style.fill: "#F8F9FA"
   style.stroke: "#1A73E8"
@@ -68,17 +75,20 @@ App: "Ketaflix PWA" {
 
 # ── Backend ──
 Backend: "Supabase Backend" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#34A853"
   style.border-radius: 12
   style.shadow: true
 
   SupaAuth: "Supabase Auth\nUsername-only" {
+    tooltip: "Username-only auth, no email/password"
     class: database
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
   }
 
   SupaDB: "Supabase Database\nketamovies project" {
+    tooltip: "ketamovies project, primary account, us-east-1"
     class: database
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
   }
@@ -91,28 +101,33 @@ Backend: "Supabase Backend" {
 
 # ── External ──
 External: "External" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#FF9800"
   style.border-radius: 12
   style.shadow: true
 
   TMDB: "TMDB API\nMovie Data" {
+    link: https://www.themoviedb.org
     class: external
   }
 }
 
 # ── Deploy ──
 Deploy: "Deploy" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#7C3AED"
   style.border-radius: 12
   style.shadow: true
 
   Netlify: "Netlify\nketaflix-app" {
+    link: https://ketaflix-app.netlify.app
     class: hosting
   }
 
   Doppler: "Doppler\nketaflix" {
+    tooltip: "ketaflix config"
     class: service
     style.fill: "#F3E8FF"
   }

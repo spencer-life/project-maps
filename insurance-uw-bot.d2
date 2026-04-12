@@ -15,6 +15,7 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
   database: {
     shape: cylinder
@@ -22,12 +23,14 @@ classes: {
     style.stroke: "#34A853"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   external: {
     style.fill: ${ext}
     style.stroke: "#FF9800"
     style.stroke-dash: 3
     style.border-radius: 8
+    style.font-size: 18
   }
   hosting: {
     shape: cloud
@@ -35,6 +38,7 @@ classes: {
     style.stroke: "#7C3AED"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   bot: {
     style.fill: ${discord}
@@ -42,11 +46,14 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
 }
 
 # ── Discord Server ──
 Discord: "Discord Server" {
+  style.font-size: 20
+  tooltip: "Multi-server underwriting bot"
   style.fill: "#F8F9FA"
   style.stroke: "#5865F2"
   style.border-radius: 12
@@ -65,13 +72,15 @@ Discord: "Discord Server" {
 
 # ── Bot Container ──
 Bot: "Insurance UW Bot (Python)" {
+  style.font-size: 20
+  link: https://github.com/spencer-life/insurance-uw-bot
   icon: https://icons.terrastruct.com/dev%2Fpython.svg
   style.fill: "#F8F9FA"
   style.stroke: "#1A73E8"
   style.border-radius: 12
   style.shadow: true
 
-  Agent: "Claude AI Agent\nSonnet 4.6 + Haiku 4.5" {
+  Agent: "Claude AI Agent\nSonnet 4 + Haiku 4.5" {
     class: service
   }
 
@@ -82,17 +91,20 @@ Bot: "Insurance UW Bot (Python)" {
 
 # ── Data Layer ──
 Data: "Data Layer" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#34A853"
   style.border-radius: 12
   style.shadow: true
 
   RailwayPG: "Railway PostgreSQL\n9 carriers, 32 products\n902 rules, 312 meds" {
+    tooltip: "9 carriers, 32 products, 902 rules, 312 meds"
     class: database
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
   }
 
   SupaPG: "Supabase pgvector\nAlt Account\nGuideline Embeddings" {
+    tooltip: "Alt account (schofieldspencer@gmail.com), guideline embeddings"
     class: database
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
   }
@@ -104,17 +116,20 @@ Data: "Data Layer" {
 
 # ── Deployment ──
 Deploy: "Deployment" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#7C3AED"
   style.border-radius: 12
   style.shadow: true
 
   Railway: "Railway\nAuto-deploy from GitHub" {
+    link: https://railway.app
     class: hosting
     icon: https://icons.terrastruct.com/dev%2Fgithub.svg
   }
 
   Doppler: "Doppler\nspencer-main / dev_personal" {
+    tooltip: "spencer-main/dev_personal config"
     class: service
     style.fill: "#F3E8FF"
   }

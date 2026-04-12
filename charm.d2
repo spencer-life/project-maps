@@ -15,6 +15,7 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
   database: {
     shape: cylinder
@@ -22,12 +23,14 @@ classes: {
     style.stroke: "#34A853"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   external: {
     style.fill: ${ext}
     style.stroke: "#FF9800"
     style.stroke-dash: 3
     style.border-radius: 8
+    style.font-size: 18
   }
   hosting: {
     shape: cloud
@@ -35,6 +38,7 @@ classes: {
     style.stroke: "#7C3AED"
     style.bold: true
     style.shadow: true
+    style.font-size: 18
   }
   bot: {
     style.fill: ${discord}
@@ -42,11 +46,14 @@ classes: {
     style.bold: true
     style.shadow: true
     style.border-radius: 8
+    style.font-size: 18
   }
 }
 
 # ── Frontend ──
 Frontend: "Frontend" {
+  style.font-size: 20
+  link: https://github.com/spencer-life/C.H.A.R.M.
   icon: https://icons.terrastruct.com/dev%2Freact.svg
   style.fill: "#F8F9FA"
   style.stroke: "#1A73E8"
@@ -58,12 +65,14 @@ Frontend: "Frontend" {
   }
 
   Netlify: "Netlify\nthecharmmodel.com" {
+    link: https://thecharmmodel.com
     class: hosting
   }
 }
 
 # ── Backend ──
 Backend: "Backend" {
+  style.font-size: 20
   icon: https://icons.terrastruct.com/dev%2Fnodejs.svg
   style.fill: "#F8F9FA"
   style.stroke: "#1A73E8"
@@ -78,6 +87,7 @@ Backend: "Backend" {
 
 # ── Database Layer ──
 Database: "Database Layer" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#34A853"
   style.border-radius: 12
@@ -88,6 +98,7 @@ Database: "Database Layer" {
   }
 
   Supabase: "Supabase\nC.H.A.R.M Project\nGame Data + Knowledge Base" {
+    tooltip: "C.H.A.R.M project, primary account, us-west-2"
     class: database
     icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
   }
@@ -95,6 +106,8 @@ Database: "Database Layer" {
 
 # ── Sub-Projects ──
 SubProjects: "Sub-Projects" {
+  style.font-size: 20
+  tooltip: "CHARM variants: animations, boss battles, theme"
   style.fill: "#F8F9FA"
   style.stroke: "#7C3AED"
   style.border-radius: 12
@@ -118,12 +131,14 @@ SubProjects: "Sub-Projects" {
 
 # ── Config ──
 Config: "Config" {
+  style.font-size: 20
   style.fill: "#F8F9FA"
   style.stroke: "#7C3AED"
   style.border-radius: 12
   style.shadow: true
 
   Doppler: "Doppler\ncharm" {
+    tooltip: "charm config"
     class: service
     style.fill: "#F3E8FF"
   }
