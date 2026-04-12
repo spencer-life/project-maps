@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>S.P.A.R.K. / N.I.G.E.L — Project Maps</title>
+<title>N.I.G.E.L / S.P.A.R.K. — Project Maps</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,12 +18,83 @@
   <a href="warroom.html" id="nav-warroom">WarRoom</a>
 </nav>
 <main>
-  <h1>S.P.A.R.K. / N.I.G.E.L</h1>
-  <p class="subtitle">Discord community + AI bot — 8 agents, 12 skills, RAG pipeline</p>
-  <div class="diagram-container diagram-large">
-    <object data="spark-nigel.svg" type="image/svg+xml" width="100%">Your browser does not support SVG</object>
+  <h1>N.I.G.E.L / S.P.A.R.K.</h1>
+  <p class="subtitle">RAG + Claude + Gemini &mdash; 8 agents, 12 skills &mdash; <a href="https://github.com/spencer-life/N.I.G.E.L" style="color: #3b82f6;">GitHub</a></p>
+
+  <div class="arch-section" style="border-color: #5865F2;">
+    <div class="arch-header" style="background: #5865F2;"><h2>Discord (S.P.A.R.K.)</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Community Members</div><div class="node-detail">S.P.A.R.K. Discord community</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Daily Drills</div><div class="node-detail">Bot command</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Doctrine Q&A</div><div class="node-detail">Bot command</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Authority Metrics</div><div class="node-detail">Bot command</div></div>
+      </div>
+    </div>
   </div>
-  <div class="hint"><strong>Tip:</strong> Click any node to open its GitHub repo, Netlify site, or service URL. Hover for details.</div>
+
+  <div class="arch-section" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: #1A73E8;"><h2>N.I.G.E.L Bot (TypeScript)</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">8 Specialized Agents</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">12 Reusable Skills</div></div>
+        <div class="arch-node" style="border-color: #E91E63;"><div class="node-name">RAG Pipeline (LangChain)</div><div class="node-detail">Retrieval-augmented generation</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #FF9800;">
+    <div class="arch-header" style="background: #FF9800;"><h2>AI Layer</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #FF9800;"><div class="node-name">Anthropic Claude</div><div class="node-detail">Primary AI provider</div></div>
+        <div class="arch-node" style="border-color: #FF9800;"><div class="node-name">Google Generative AI</div><div class="node-detail">Secondary provider</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #34A853;">
+    <div class="arch-header" style="background: #34A853;"><h2>Data</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase (NIGEL)</div><div class="node-detail">Knowledge base, primary account, us-west-2</div><div class="node-shape">Database</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #7C3AED;">
+    <div class="arch-header" style="background: #7C3AED;"><h2>Deploy</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name">Railway (just-wisdom)</div><div class="node-detail">Hosts the bot</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://nigel-console.netlify.app">nigel-console</a></div><div class="node-detail">Admin dashboard on Netlify</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://authority-metrics.netlify.app">authority-metrics</a></div><div class="node-detail">Metrics dashboard on Netlify</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-section">
+    <h3>Data Flow</h3>
+    <ul class="flow-list">
+      <li class="flow-item" style="border-color: #5865F2;"><span class="flow-source">Bot Commands</span><span class="flow-arrow">&rarr;</span><span class="flow-target">8 Specialized Agents</span><span class="flow-label">triggers</span></li>
+      <li class="flow-item" style="border-color: #1A73E8;"><span class="flow-source">Agents</span><span class="flow-arrow">&rarr;</span><span class="flow-target">12 Skills</span><span class="flow-label">delegates to</span></li>
+      <li class="flow-item" style="border-color: #E91E63;"><span class="flow-source">Agents</span><span class="flow-arrow">&rarr;</span><span class="flow-target">RAG Pipeline</span><span class="flow-label">queries knowledge</span></li>
+      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">RAG Pipeline</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase</span><span class="flow-label">retrieves context</span></li>
+      <li class="flow-item" style="border-color: #FF9800;"><span class="flow-source">RAG Pipeline</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Claude / Gemini</span><span class="flow-label">generates responses</span></li>
+      <li class="flow-item" style="border-color: #7C3AED;"><span class="flow-source">Railway</span><span class="flow-arrow">&rarr;</span><span class="flow-target">N.I.G.E.L Bot</span><span class="flow-label">hosts</span></li>
+    </ul>
+  </div>
+
+  <div class="services-row" style="margin-top: 24px;">
+    <span class="services-label">Services:</span>
+    <span class="service-badge badge-railway">Railway</span>
+    <span class="service-badge badge-supabase">Supabase</span>
+    <span class="service-badge badge-netlify">Netlify</span>
+    <span class="service-badge badge-discord">Discord</span>
+    <span class="service-badge badge-doppler">Doppler</span>
+    <span class="service-badge badge-github">GitHub</span>
+  </div>
 </main>
 <script>document.getElementById('nav-spark').classList.add('active');</script>
 </body>

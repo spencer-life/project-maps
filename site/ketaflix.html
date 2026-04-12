@@ -19,11 +19,67 @@
 </nav>
 <main>
   <h1>Ketaflix</h1>
-  <p class="subtitle">Movie watchlist PWA — Next.js 15, Supabase, TMDB API</p>
-  <div class="diagram-container diagram-large">
-    <object data="ketaflix.svg" type="image/svg+xml" width="100%">Your browser does not support SVG</object>
+  <p class="subtitle">Next.js 15 PWA &mdash; Movie Watchlist &mdash; <a href="https://ketaflix-app.netlify.app" style="color: #3b82f6;">ketaflix-app.netlify.app</a></p>
+
+  <div class="arch-section" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: #1A73E8;"><h2>Ketaflix PWA</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Next.js 15</div><div class="node-detail">React 19 + Tailwind</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">anime.js v4</div><div class="node-detail">Animations</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Lucide Icons</div></div>
+      </div>
+    </div>
   </div>
-  <div class="hint"><strong>Tip:</strong> Click any node to open its GitHub repo, Netlify site, or service URL. Hover for details.</div>
+
+  <div class="arch-section" style="border-color: #34A853;">
+    <div class="arch-header" style="background: #34A853;"><h2>Supabase Backend</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase Auth</div><div class="node-detail">Username-only auth, no email/password</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase Database</div><div class="node-detail">ketamovies project, primary account, us-east-1</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase Realtime</div><div class="node-detail">Live sync across devices</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #FF9800;">
+    <div class="arch-header" style="background: #FF9800;"><h2>External</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #FF9800;"><div class="node-name"><a href="https://www.themoviedb.org">TMDB API</a></div><div class="node-detail">Movie data &mdash; posters, metadata, search</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #7C3AED;">
+    <div class="arch-header" style="background: #7C3AED;"><h2>Deploy</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://ketaflix-app.netlify.app">Netlify</a></div><div class="node-detail">Serves the PWA</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name">Doppler</div><div class="node-detail">ketaflix config</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-section">
+    <h3>Data Flow</h3>
+    <ul class="flow-list">
+      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Next.js</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase Auth</span><span class="flow-label">authenticates</span></li>
+      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Next.js</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase Database</span><span class="flow-label">queries watchlist</span></li>
+      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Next.js</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase Realtime</span><span class="flow-label">subscribes to changes</span></li>
+      <li class="flow-item" style="border-color: #FF9800;"><span class="flow-source">Next.js</span><span class="flow-arrow">&rarr;</span><span class="flow-target">TMDB API</span><span class="flow-label">fetches movies</span></li>
+      <li class="flow-item" style="border-color: #7C3AED;"><span class="flow-source">Doppler</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Netlify</span><span class="flow-label">secrets</span></li>
+    </ul>
+  </div>
+
+  <div class="services-row" style="margin-top: 24px;">
+    <span class="services-label">Services:</span>
+    <span class="service-badge badge-supabase">Supabase</span>
+    <span class="service-badge badge-netlify">Netlify</span>
+    <span class="service-badge badge-doppler">Doppler</span>
+    <span class="service-badge badge-github">GitHub</span>
+  </div>
 </main>
 <script>document.getElementById('nav-ketaflix').classList.add('active');</script>
 </body>

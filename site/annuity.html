@@ -19,11 +19,71 @@
 </nav>
 <main>
   <h1>Annuity Expert AI</h1>
-  <p class="subtitle">Annuity product advisor — Python + FastAPI, 19 carriers, 184 tests</p>
-  <div class="diagram-container diagram-large">
-    <object data="annuity-expert-ai.svg" type="image/svg+xml" width="100%">Your browser does not support SVG</object>
+  <p class="subtitle">Python + FastAPI + Claude Sonnet 4 &mdash; 19 carriers, 184 tests</p>
+
+  <div class="arch-section" style="border-color: #5865F2;">
+    <div class="arch-header" style="background: #5865F2;"><h2>Clients</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Discord Bot</div><div class="node-detail">Slash command interface for agents</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name"><a href="https://annuity-expert-ai.netlify.app">Next.js Frontend</a></div><div class="node-detail">Hosted on Netlify</div></div>
+      </div>
+    </div>
   </div>
-  <div class="hint"><strong>Tip:</strong> Click any node to open its GitHub repo, Netlify site, or service URL. Hover for details.</div>
+
+  <div class="arch-section" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: #1A73E8;"><h2>FastAPI Backend (Python)</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Claude AI Agent</div><div class="node-detail">Primary intelligence layer</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Goal Router</div><div class="node-detail">Income / Accumulation / Protection / Legacy</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #34A853;">
+    <div class="arch-header" style="background: #34A853;"><h2>Data Layer</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Railway PostgreSQL</div><div class="node-detail">19 carriers, crediting strategies, MYGA rates</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase pgvector</div><div class="node-detail">Alt account &mdash; shared with UW Bot</div><div class="node-shape">Database</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #FF9800;">
+    <div class="arch-header" style="background: #FF9800;"><h2>External APIs</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #FF9800;"><div class="node-name"><a href="https://fred.stlouisfed.org">FRED API</a></div><div class="node-detail">Economic indicators</div></div>
+        <div class="arch-node" style="border-color: #FF9800;"><div class="node-name">yfinance</div><div class="node-detail">Market data</div></div>
+        <div class="arch-node" style="border-color: #FF9800;"><div class="node-name">OpenAI Embeddings</div><div class="node-detail">Generates embeddings for vector search</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-section">
+    <h3>Data Flow</h3>
+    <ul class="flow-list">
+      <li class="flow-item" style="border-color: #5865F2;"><span class="flow-source">Discord Bot</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Claude AI Agent</span><span class="flow-label">commands</span></li>
+      <li class="flow-item" style="border-color: #1A73E8;"><span class="flow-source">Next.js Frontend</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Claude AI Agent</span><span class="flow-label">requests</span></li>
+      <li class="flow-item" style="border-color: #1A73E8;"><span class="flow-source">Agent</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Goal Router</span><span class="flow-label">routes by goal type</span></li>
+      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Goal Router</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Railway PostgreSQL</span><span class="flow-label">queries</span></li>
+      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Agent</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase pgvector</span><span class="flow-label">vector search</span></li>
+      <li class="flow-item" style="border-color: #FF9800;"><span class="flow-source">Agent</span><span class="flow-arrow">&rarr;</span><span class="flow-target">FRED + yfinance</span><span class="flow-label">economic + market data</span></li>
+      <li class="flow-item" style="border-color: #FF9800;"><span class="flow-source">OpenAI</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase pgvector</span><span class="flow-label">generates embeddings</span></li>
+    </ul>
+  </div>
+
+  <div class="services-row" style="margin-top: 24px;">
+    <span class="services-label">Services:</span>
+    <span class="service-badge badge-railway">Railway</span>
+    <span class="service-badge badge-supabase">Supabase</span>
+    <span class="service-badge badge-netlify">Netlify</span>
+    <span class="service-badge badge-doppler">Doppler</span>
+    <span class="service-badge badge-discord">Discord</span>
+    <span class="service-badge badge-github">GitHub</span>
+  </div>
 </main>
 <script>document.getElementById('nav-annuity').classList.add('active');</script>
 </body>

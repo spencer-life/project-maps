@@ -19,11 +19,94 @@
 </nav>
 <main>
   <h1>WarRoom Agency Flow</h1>
-  <p class="subtitle">Agency submission pipeline — forms, processing, Discord webhooks</p>
-  <div class="diagram-container diagram-large">
-    <object data="warroom-agency-flow.svg" type="image/svg+xml" width="100%">Your browser does not support SVG</object>
+  <p class="subtitle">Full submission &rarr; processing &rarr; Discord bot pipeline</p>
+
+  <div class="arch-section" style="border-color: #F57C00;">
+    <div class="arch-header" style="background: #F57C00;"><h2>Agency Hierarchy</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #F57C00; background: #FFF8E1;"><div class="node-name">Execute Financial</div><div class="node-detail">3 top-level: Sentinel, Ascend, Nitehawk</div></div>
+        <div class="arch-node" style="border-color: #F57C00; background: #FFF8E1;"><div class="node-name">Diligence</div><div class="node-detail">11 sub-agencies: Grand Capital, High Caliber, Mentality, Desire, +7 more</div></div>
+        <div class="arch-node" style="border-color: #F57C00; background: #FFF8E1;"><div class="node-name">Reflect</div><div class="node-detail">5 sub-agencies: Vault, Palace, Enrich, Krafted, Cridland Coverage</div></div>
+      </div>
+    </div>
   </div>
-  <div class="hint"><strong>Tip:</strong> Click any node to open its GitHub repo, Netlify site, or service URL. Hover for details.</div>
+
+  <div class="arch-section" style="border-color: #7C3AED;">
+    <div class="arch-header" style="background: #7C3AED;"><h2>Submission Forms</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://leaderboard-submit.netlify.app">Execute Form</a></div><div class="node-detail">Netlify-hosted submission</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://diligence-agencies.netlify.app">Diligence Form</a></div><div class="node-detail">Netlify-hosted submission</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://reflect.warroomsystems.com">Reflect Form</a></div><div class="node-detail">Custom domain submission</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: #1A73E8;"><h2>Processing</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Google Apps Script</div><div class="node-detail">2 active deployments (Execute Financial + Diligence)</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Google Sheets</div><div class="node-detail">4 tracked spreadsheets</div><div class="node-shape">Database</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #5865F2;">
+    <div class="arch-header" style="background: #5865F2;"><h2>Discord Bots</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Leaderboard Bot</div><div class="node-detail">Railway: unique-imagination</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">war-room-ai</div><div class="node-detail">Railway: authentic-passion &mdash; Agency management + Gemini AI</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">WarRoomEngine Bot</div><div class="node-detail">Railway PostgreSQL &mdash; admin + onboarding</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Licensing Bot</div><div class="node-detail">Railway: surprising-renewal (NO DEPLOY)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #FF9800;">
+    <div class="arch-header" style="background: #FF9800;"><h2>AI Layer</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #FF9800;"><div class="node-name">Google Gemini</div><div class="node-detail">Powers war-room-ai and Execute Financial bots</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #5865F2;">
+    <div class="arch-header" style="background: #5865F2;"><h2>Output &mdash; Discord Webhooks</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Live Wins</div><div class="node-detail">Real-time submission notifications</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Daily Reports</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Weekly Reports</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Monthly Reports</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-section">
+    <h3>Full Pipeline</h3>
+    <ul class="flow-list">
+      <li class="flow-item" style="border-color: #F57C00;"><span class="flow-source">Agencies</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Submission Forms</span><span class="flow-label">submits data</span></li>
+      <li class="flow-item" style="border-color: #7C3AED;"><span class="flow-source">Forms</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Apps Script</span><span class="flow-label">POST webhook</span></li>
+      <li class="flow-item" style="border-color: #1A73E8;"><span class="flow-source">Google Sheets</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Leaderboard Bot</span><span class="flow-label">reads data</span></li>
+      <li class="flow-item" style="border-color: #FF9800;"><span class="flow-source">Google Gemini</span><span class="flow-arrow">&rarr;</span><span class="flow-target">war-room-ai</span><span class="flow-label">powers AI</span></li>
+      <li class="flow-item" style="border-color: #5865F2;"><span class="flow-source">All Bots</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Discord Webhooks</span><span class="flow-label">posts rankings + updates</span></li>
+    </ul>
+  </div>
+
+  <div class="services-row" style="margin-top: 24px;">
+    <span class="services-label">Services:</span>
+    <span class="service-badge badge-railway">Railway</span>
+    <span class="service-badge badge-netlify">Netlify</span>
+    <span class="service-badge badge-discord">Discord</span>
+    <span class="service-badge badge-sheets">Google Sheets</span>
+    <span class="service-badge badge-apps-script">Apps Script</span>
+    <span class="service-badge badge-doppler">Doppler</span>
+    <span class="service-badge badge-github">GitHub</span>
+  </div>
 </main>
 <script>document.getElementById('nav-warroom').classList.add('active');</script>
 </body>

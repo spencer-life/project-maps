@@ -19,11 +19,69 @@
 </nav>
 <main>
   <h1>C.H.A.R.M.</h1>
-  <p class="subtitle">React Native behavioral RPG — Express.js, MongoDB, Supabase</p>
-  <div class="diagram-container diagram-large">
-    <object data="charm.svg" type="image/svg+xml" width="100%">Your browser does not support SVG</object>
+  <p class="subtitle">React Native Behavioral RPG &mdash; <a href="https://thecharmmodel.com" style="color: #3b82f6;">thecharmmodel.com</a></p>
+
+  <div class="arch-section" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: #1A73E8;"><h2>Frontend</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">React Native Expo</div><div class="node-detail">Mobile + Web</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://thecharmmodel.com">Netlify</a></div><div class="node-detail">Serves web version</div></div>
+      </div>
+    </div>
   </div>
-  <div class="hint"><strong>Tip:</strong> Click any node to open its GitHub repo, Netlify site, or service URL. Hover for details.</div>
+
+  <div class="arch-section" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: #1A73E8;"><h2>Backend</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Express.js API</div><div class="node-detail">Hosted on Railway</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #34A853;">
+    <div class="arch-header" style="background: #34A853;"><h2>Database Layer</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">MongoDB</div><div class="node-detail">User authentication</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase</div><div class="node-detail">C.H.A.R.M project, primary account, us-west-2</div><div class="node-shape">Database</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-section" style="border-color: #7C3AED;">
+    <div class="arch-header" style="background: #7C3AED;"><h2>Sub-Projects</h2></div>
+    <div class="arch-body">
+      <div class="arch-nodes">
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name">CHARM-animations</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name">CHARM-boss-battles</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name">CHARM-theme</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-section">
+    <h3>Data Flow</h3>
+    <ul class="flow-list">
+      <li class="flow-item" style="border-color: #1A73E8;"><span class="flow-source">React Native</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Express.js API</span><span class="flow-label">API calls</span></li>
+      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Express.js</span><span class="flow-arrow">&rarr;</span><span class="flow-target">MongoDB</span><span class="flow-label">auth</span></li>
+      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Express.js</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase</span><span class="flow-label">game data</span></li>
+      <li class="flow-item" style="border-color: #7C3AED;"><span class="flow-source">Sub-Projects</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Express.js</span><span class="flow-label">extends backend</span></li>
+      <li class="flow-item" style="border-color: #7C3AED;"><span class="flow-source">Doppler</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Express.js</span><span class="flow-label">secrets</span></li>
+    </ul>
+  </div>
+
+  <div class="services-row" style="margin-top: 24px;">
+    <span class="services-label">Services:</span>
+    <span class="service-badge badge-railway">Railway</span>
+    <span class="service-badge badge-supabase">Supabase</span>
+    <span class="service-badge badge-netlify">Netlify</span>
+    <span class="service-badge badge-mongodb">MongoDB</span>
+    <span class="service-badge badge-doppler">Doppler</span>
+    <span class="service-badge badge-discord">Discord</span>
+    <span class="service-badge badge-github">GitHub</span>
+  </div>
 </main>
 <script>document.getElementById('nav-charm').classList.add('active');</script>
 </body>

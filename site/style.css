@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -16,7 +16,11 @@ body {
   background: #f9fafb;
   color: #111827;
   min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.5;
 }
+
+/* ---- NAV ---- */
 
 nav {
   background: #1f2937;
@@ -66,15 +70,17 @@ nav a.active {
   border-bottom: 3px solid #3b82f6;
 }
 
+/* ---- LAYOUT ---- */
+
 main {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 48px;
+  padding: 40px 32px;
 }
 
 h1 {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
   color: #111827;
   margin-bottom: 6px;
   letter-spacing: -0.02em;
@@ -82,32 +88,382 @@ h1 {
 
 .subtitle {
   color: #6b7280;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
+  margin-bottom: 32px;
+}
+
+/* ---- PROJECT GROUP SECTIONS ---- */
+
+.project-group {
+  margin-bottom: 32px;
+  border-radius: 16px;
+  border: 2px solid;
+  overflow: hidden;
+}
+
+.project-group-header {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.project-group-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.project-group-body {
+  padding: 20px 24px 24px;
+  background: #fff;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* ---- PROJECT CARDS ---- */
+
+.project-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+.project-card .card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-card .card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card .card-title a:hover {
+  text-decoration: underline;
+}
+
+.project-card .card-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.project-card .card-tech {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.project-card .card-stats {
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.project-card .card-link {
+  font-size: 13px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.project-card .card-link a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project-card .card-link a:hover {
+  text-decoration: underline;
+}
+
+/* ---- SERVICE BADGES ---- */
+
+.services-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.services-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.service-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid;
+}
+
+.badge-railway {
+  background: #ede7f6;
+  border-color: #7c3aed;
+  color: #5b21b6;
+}
+.badge-supabase {
+  background: #e6f4ea;
+  border-color: #34a853;
+  color: #166534;
+}
+.badge-netlify {
+  background: #e0f2f1;
+  border-color: #00897b;
+  color: #065f46;
+}
+.badge-discord {
+  background: #e8eaf6;
+  border-color: #5865f2;
+  color: #3730a3;
+}
+.badge-sheets {
+  background: #e8f5e9;
+  border-color: #43a047;
+  color: #166534;
+}
+.badge-apps-script {
+  background: #e8f5e9;
+  border-color: #43a047;
+  color: #166534;
+}
+.badge-doppler {
+  background: #fff9c4;
+  border-color: #f9a825;
+  color: #92400e;
+}
+.badge-github {
+  background: #f5f5f5;
+  border-color: #424242;
+  color: #1f2937;
+}
+.badge-mongodb {
+  background: #e6f4ea;
+  border-color: #34a853;
+  color: #166534;
+}
+
+/* ---- SHARED PLATFORM SECTION ---- */
+
+.platform-section {
+  margin-bottom: 32px;
+}
+
+.platform-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #5b21b6;
+  margin-bottom: 16px;
+}
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.platform-card {
+  border-radius: 12px;
+  padding: 16px 20px;
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.platform-card .platform-name {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.platform-card .platform-detail {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.platform-card .platform-users {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+/* ---- FOOTNOTE ---- */
+
+.footnote {
+  margin-top: 24px;
+  padding: 14px 20px;
+  background: #fffde7;
+  border: 1.5px solid #f9a825;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #92400e;
+  font-weight: 500;
+}
+
+.footnote strong {
+  font-weight: 700;
+}
+
+/* ---- ARCHITECTURE PAGE ---- */
+
+.arch-section {
+  margin-bottom: 28px;
+  border-radius: 16px;
+  border: 2px solid;
+  overflow: hidden;
+}
+
+.arch-header {
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arch-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.arch-body {
+  padding: 20px 24px;
+  background: #fff;
+}
+
+.arch-nodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.arch-node {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 18px;
+  transition: box-shadow 0.2s;
+}
+
+.arch-node:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.arch-node .node-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.arch-node .node-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.arch-node .node-name a:hover {
+  text-decoration: underline;
+}
+
+.arch-node .node-detail {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.arch-node .node-shape {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* ---- FLOW / CONNECTIONS ---- */
+
+.flow-section {
   margin-bottom: 28px;
 }
 
-.diagram-container {
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.1),
-    0 1px 2px rgba(0, 0, 0, 0.06);
-  padding: 32px;
-  overflow: auto;
+.flow-section h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 12px;
 }
 
-.diagram-container object,
-.diagram-container embed {
-  width: 100%;
-  min-height: 92vh;
+.flow-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.diagram-container.diagram-large object,
-.diagram-container.diagram-large embed {
-  min-height: 100vh;
+.flow-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 15px;
+  border-left: 4px solid;
 }
+
+.flow-item .flow-source {
+  font-weight: 600;
+  color: #111827;
+}
+
+.flow-item .flow-arrow {
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.flow-item .flow-target {
+  font-weight: 600;
+  color: #111827;
+}
+
+.flow-item .flow-label {
+  color: #6b7280;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* ---- HINT ---- */
 
 .hint {
   margin-top: 20px;
@@ -115,7 +471,7 @@ h1 {
   background: #eff6ff;
   border: 1px solid #dbeafe;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 14px;
   color: #374151;
   display: flex;
   align-items: center;
@@ -126,6 +482,8 @@ h1 {
   color: #1d4ed8;
   font-weight: 600;
 }
+
+/* ---- RESPONSIVE ---- */
 
 @media (max-width: 768px) {
   nav {
@@ -147,8 +505,13 @@ h1 {
   h1 {
     font-size: 24px;
   }
-  .diagram-container {
-    padding: 16px;
-    border-radius: 8px;
+  .project-cards {
+    grid-template-columns: 1fr;
+  }
+  .arch-nodes {
+    grid-template-columns: 1fr;
+  }
+  .platform-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
