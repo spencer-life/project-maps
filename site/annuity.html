@@ -21,18 +21,21 @@
   <h1>Annuity Expert AI</h1>
   <p class="subtitle">Python + FastAPI + Claude Sonnet 4 &mdash; 19 carriers, 184 tests</p>
 
-  <div class="arch-section" style="border-color: #5865F2;">
-    <div class="arch-header" style="background: #5865F2;"><h2>Clients</h2></div>
+  <div class="arch-section" id="section-clients" style="border-color: #5865F2;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #5865F2, #7C3AED);"><h2>Clients</h2></div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Discord Bot</div><div class="node-detail">Slash command interface for agents</div></div>
-        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name"><a href="https://annuity-expert-ai.netlify.app">Next.js Frontend</a></div><div class="node-detail">Hosted on Netlify</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Freact.svg" alt=""><a href="https://annuity-expert-ai.netlify.app">Next.js Frontend</a></div><div class="node-detail">Hosted on Netlify</div></div>
       </div>
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #1A73E8;">
-    <div class="arch-header" style="background: #1A73E8;"><h2>FastAPI Backend (Python)</h2></div>
+  <div class="arch-section" id="section-backend" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #1A73E8, #1565C0);">
+      <img class="header-icon" src="https://icons.terrastruct.com/dev%2Fpython.svg" alt="">
+      <h2>FastAPI Backend (Python)</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Claude AI Agent</div><div class="node-detail">Primary intelligence layer</div></div>
@@ -41,18 +44,21 @@
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #34A853;">
-    <div class="arch-header" style="background: #34A853;"><h2>Data Layer</h2></div>
+  <div class="arch-section" id="section-data" style="border-color: #34A853;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #34A853, #2E7D32);">
+      <img class="header-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">
+      <h2>Data Layer</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
-        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Railway PostgreSQL</div><div class="node-detail">19 carriers, crediting strategies, MYGA rates</div><div class="node-shape">Database</div></div>
-        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase pgvector</div><div class="node-detail">Alt account &mdash; shared with UW Bot</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">Railway PostgreSQL</div><div class="node-detail">19 carriers, crediting strategies, MYGA rates</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">Supabase pgvector</div><div class="node-detail">Alt account &mdash; shared with UW Bot</div><div class="node-shape">Database</div></div>
       </div>
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #FF9800;">
-    <div class="arch-header" style="background: #FF9800;"><h2>External APIs</h2></div>
+  <div class="arch-section" id="section-external" style="border-color: #FF9800;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #FF9800, #F57C00);"><h2>External APIs</h2></div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #FF9800;"><div class="node-name"><a href="https://fred.stlouisfed.org">FRED API</a></div><div class="node-detail">Economic indicators</div></div>
@@ -69,22 +75,35 @@
       <li class="flow-item" style="border-color: #1A73E8;"><span class="flow-source">Next.js Frontend</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Claude AI Agent</span><span class="flow-label">requests</span></li>
       <li class="flow-item" style="border-color: #1A73E8;"><span class="flow-source">Agent</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Goal Router</span><span class="flow-label">routes by goal type</span></li>
       <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Goal Router</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Railway PostgreSQL</span><span class="flow-label">queries</span></li>
-      <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Agent</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase pgvector</span><span class="flow-label">vector search</span></li>
       <li class="flow-item" style="border-color: #FF9800;"><span class="flow-source">Agent</span><span class="flow-arrow">&rarr;</span><span class="flow-target">FRED + yfinance</span><span class="flow-label">economic + market data</span></li>
-      <li class="flow-item" style="border-color: #FF9800;"><span class="flow-source">OpenAI</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase pgvector</span><span class="flow-label">generates embeddings</span></li>
     </ul>
   </div>
 
   <div class="services-row" style="margin-top: 24px;">
     <span class="services-label">Services:</span>
-    <span class="service-badge badge-railway">Railway</span>
-    <span class="service-badge badge-supabase">Supabase</span>
+    <span class="service-badge badge-railway"><img class="badge-icon" src="https://icons.terrastruct.com/tech%2F022-server.svg" alt="">Railway</span>
+    <span class="service-badge badge-supabase"><img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">Supabase</span>
     <span class="service-badge badge-netlify">Netlify</span>
     <span class="service-badge badge-doppler">Doppler</span>
     <span class="service-badge badge-discord">Discord</span>
-    <span class="service-badge badge-github">GitHub</span>
+    <span class="service-badge badge-github"><img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fgithub.svg" alt="">GitHub</span>
   </div>
 </main>
 <script>document.getElementById('nav-annuity').classList.add('active');</script>
+<script src="https://cdn.jsdelivr.net/npm/leader-line/leader-line.min.js"></script>
+<script>
+if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
+  const lines = [];
+  const opt = (color, label) => ({
+    color: color, size: 2, path: 'grid', endPlug: 'arrow1',
+    startSocket: 'bottom', endSocket: 'top',
+    middleLabel: label ? LeaderLine.pathLabel({text: label, color: color, fontSize: '13px'}) : undefined
+  });
+  lines.push(new LeaderLine(document.getElementById('section-clients'), document.getElementById('section-backend'), opt('#5865F2', 'commands')));
+  lines.push(new LeaderLine(document.getElementById('section-backend'), document.getElementById('section-data'), opt('#1A73E8', 'queries')));
+  lines.push(new LeaderLine(document.getElementById('section-backend'), document.getElementById('section-external'), opt('#FF9800', 'APIs')));
+  window.addEventListener('resize', () => lines.forEach(l => l.position()));
+}
+</script>
 </body>
 </html>

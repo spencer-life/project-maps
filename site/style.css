@@ -13,17 +13,18 @@ body {
     BlinkMacSystemFont,
     system-ui,
     sans-serif;
-  background: #f9fafb;
+  background: #f8f9fb;
   color: #111827;
   min-height: 100vh;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.55;
 }
 
 /* ---- NAV ---- */
 
 nav {
-  background: #1f2937;
+  background: linear-gradient(135deg, #1a1f2e, #1f2937);
+  backdrop-filter: blur(12px);
   padding: 0 32px;
   display: flex;
   align-items: center;
@@ -34,40 +35,40 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 nav .brand {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 16px;
   color: #fff;
   padding: 0 20px 0 0;
   white-space: nowrap;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
   margin-right: 12px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 nav a {
-  color: #d1d5db;
+  color: #9ca3af;
   text-decoration: none;
   padding: 20px 16px;
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
-  transition:
-    color 0.2s,
-    border-bottom 0.2s;
+  transition: all 0.2s ease;
   border-bottom: 3px solid transparent;
 }
 
 nav a:hover {
-  color: #fff;
+  color: #e5e7eb;
 }
 
 nav a.active {
   color: #fff;
   border-bottom: 3px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.06);
 }
 
 /* ---- LAYOUT ---- */
@@ -76,45 +77,67 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 32px;
+  position: relative;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
   color: #111827;
   margin-bottom: 6px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .subtitle {
   color: #6b7280;
   font-size: 16px;
   font-weight: 400;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
+}
+
+.subtitle a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+.subtitle a:hover {
+  text-decoration: underline;
 }
 
 /* ---- PROJECT GROUP SECTIONS ---- */
 
 .project-group {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   border-radius: 16px;
   border: 2px solid;
   overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.project-group:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .project-group-header {
   padding: 16px 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
 }
 
 .project-group-header h2 {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 700;
   color: #fff;
   letter-spacing: -0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.header-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 
 .project-group-body {
@@ -124,8 +147,8 @@ h1 {
 
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
   margin-bottom: 16px;
 }
 
@@ -134,23 +157,22 @@ h1 {
 .project-card {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 20px;
+  padding: 18px 20px;
   background: #fff;
-  transition:
-    box-shadow 0.2s,
-    border-color 0.2s;
+  transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .project-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
   border-color: #d1d5db;
+  transform: translateY(-2px);
 }
 
 .project-card .card-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: #111827;
   display: flex;
@@ -162,14 +184,14 @@ h1 {
   color: inherit;
   text-decoration: none;
 }
-
 .project-card .card-title a:hover {
   text-decoration: underline;
+  color: #3b82f6;
 }
 
 .project-card .card-icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
 }
 
@@ -178,7 +200,6 @@ h1 {
   color: #6b7280;
   font-weight: 500;
 }
-
 .project-card .card-stats {
   font-size: 13px;
   color: #9ca3af;
@@ -190,15 +211,14 @@ h1 {
   margin-top: auto;
   padding-top: 8px;
 }
-
 .project-card .card-link a {
   color: #3b82f6;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.15s;
 }
-
 .project-card .card-link a:hover {
-  text-decoration: underline;
+  color: #2563eb;
 }
 
 /* ---- SERVICE BADGES ---- */
@@ -211,22 +231,33 @@ h1 {
 }
 
 .services-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #6b7280;
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .service-badge {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
   border: 1.5px solid;
+  transition: all 0.15s ease;
+}
+
+.service-badge:hover {
+  transform: scale(1.05);
+}
+
+.service-badge .badge-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 .badge-railway {
@@ -283,9 +314,10 @@ h1 {
 
 .platform-section h2 {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 800;
   color: #5b21b6;
   margin-bottom: 16px;
+  letter-spacing: -0.01em;
 }
 
 .platform-grid {
@@ -295,24 +327,33 @@ h1 {
 }
 
 .platform-card {
-  border-radius: 12px;
-  padding: 16px 20px;
+  border-radius: 14px;
+  padding: 18px 20px;
   border: 2px solid;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  transition: all 0.2s ease;
 }
 
+.platform-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.platform-card .platform-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
 .platform-card .platform-name {
   font-size: 17px;
   font-weight: 700;
 }
-
 .platform-card .platform-detail {
   font-size: 14px;
   color: #6b7280;
 }
-
 .platform-card .platform-users {
   font-size: 12px;
   color: #9ca3af;
@@ -324,9 +365,9 @@ h1 {
 .footnote {
   margin-top: 24px;
   padding: 14px 20px;
-  background: #fffde7;
+  background: linear-gradient(135deg, #fffde7, #fff8e1);
   border: 1.5px solid #f9a825;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 14px;
   color: #92400e;
   font-weight: 500;
@@ -339,27 +380,38 @@ h1 {
 /* ---- ARCHITECTURE PAGE ---- */
 
 .arch-section {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   border-radius: 16px;
   border: 2px solid;
   overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.arch-section:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
 }
 
 .arch-header {
   padding: 14px 24px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .arch-header h2 {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.arch-header .header-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .arch-body {
-  padding: 20px 24px;
+  padding: 18px 24px;
   background: #fff;
 }
 
@@ -373,11 +425,20 @@ h1 {
   border: 1.5px solid #e5e7eb;
   border-radius: 10px;
   padding: 14px 18px;
-  transition: box-shadow 0.2s;
+  transition: all 0.2s ease;
+  background: #fff;
 }
 
 .arch-node:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.arch-node .node-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
 .arch-node .node-name {
@@ -385,15 +446,18 @@ h1 {
   font-weight: 700;
   color: #111827;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .arch-node .node-name a {
   color: inherit;
   text-decoration: none;
 }
-
 .arch-node .node-name a:hover {
   text-decoration: underline;
+  color: #3b82f6;
 }
 
 .arch-node .node-detail {
@@ -409,6 +473,9 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: 4px;
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 /* ---- FLOW / CONNECTIONS ---- */
@@ -428,7 +495,7 @@ h1 {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .flow-item {
@@ -436,27 +503,30 @@ h1 {
   align-items: center;
   gap: 10px;
   padding: 10px 16px;
-  background: #f9fafb;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+  border-radius: 10px;
   font-size: 15px;
   border-left: 4px solid;
+  transition: all 0.15s ease;
+}
+
+.flow-item:hover {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  transform: translateX(4px);
 }
 
 .flow-item .flow-source {
   font-weight: 600;
   color: #111827;
 }
-
 .flow-item .flow-arrow {
   color: #9ca3af;
   font-size: 18px;
 }
-
 .flow-item .flow-target {
   font-weight: 600;
   color: #111827;
 }
-
 .flow-item .flow-label {
   color: #6b7280;
   font-style: italic;
@@ -468,9 +538,9 @@ h1 {
 .hint {
   margin-top: 20px;
   padding: 14px 20px;
-  background: #eff6ff;
-  border: 1px solid #dbeafe;
-  border-radius: 10px;
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
   font-size: 14px;
   color: #374151;
   display: flex;
@@ -483,9 +553,18 @@ h1 {
   font-weight: 600;
 }
 
-/* ---- RESPONSIVE ---- */
+/* ---- LEADERLINE RESPONSIVE ---- */
+
+@media (min-width: 769px) {
+  .flow-section {
+    display: none;
+  }
+}
 
 @media (max-width: 768px) {
+  .leader-line {
+    display: none !important;
+  }
   nav {
     padding: 0 16px;
     height: 56px;

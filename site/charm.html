@@ -19,39 +19,48 @@
 </nav>
 <main>
   <h1>C.H.A.R.M.</h1>
-  <p class="subtitle">React Native Behavioral RPG &mdash; <a href="https://thecharmmodel.com" style="color: #3b82f6;">thecharmmodel.com</a></p>
+  <p class="subtitle">React Native Behavioral RPG &mdash; <a href="https://thecharmmodel.com">thecharmmodel.com</a></p>
 
-  <div class="arch-section" style="border-color: #1A73E8;">
-    <div class="arch-header" style="background: #1A73E8;"><h2>Frontend</h2></div>
+  <div class="arch-section" id="section-frontend" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #1A73E8, #1565C0);">
+      <img class="header-icon" src="https://icons.terrastruct.com/dev%2Freact.svg" alt="">
+      <h2>Frontend</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
-        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">React Native Expo</div><div class="node-detail">Mobile + Web</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Freact.svg" alt="">React Native Expo</div><div class="node-detail">Mobile + Web</div></div>
         <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://thecharmmodel.com">Netlify</a></div><div class="node-detail">Serves web version</div></div>
       </div>
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #1A73E8;">
-    <div class="arch-header" style="background: #1A73E8;"><h2>Backend</h2></div>
+  <div class="arch-section" id="section-backend" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #1565C0, #0D47A1);">
+      <img class="header-icon" src="https://icons.terrastruct.com/dev%2Fnodejs.svg" alt="">
+      <h2>Backend</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
-        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Express.js API</div><div class="node-detail">Hosted on Railway</div></div>
+        <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/tech%2F022-server.svg" alt="">Express.js API</div><div class="node-detail">Hosted on Railway</div></div>
       </div>
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #34A853;">
-    <div class="arch-header" style="background: #34A853;"><h2>Database Layer</h2></div>
+  <div class="arch-section" id="section-database" style="border-color: #34A853;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #34A853, #2E7D32);">
+      <img class="header-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">
+      <h2>Database Layer</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
-        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">MongoDB</div><div class="node-detail">User authentication</div><div class="node-shape">Database</div></div>
-        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase</div><div class="node-detail">C.H.A.R.M project, primary account, us-west-2</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Fmongodb.svg" alt="">MongoDB</div><div class="node-detail">User authentication</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">Supabase</div><div class="node-detail">C.H.A.R.M project, primary account, us-west-2</div><div class="node-shape">Database</div></div>
       </div>
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #7C3AED;">
-    <div class="arch-header" style="background: #7C3AED;"><h2>Sub-Projects</h2></div>
+  <div class="arch-section" id="section-subprojects" style="border-color: #7C3AED;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #7C3AED, #6D28D9);"><h2>Sub-Projects</h2></div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name">CHARM-animations</div></div>
@@ -68,21 +77,38 @@
       <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Express.js</span><span class="flow-arrow">&rarr;</span><span class="flow-target">MongoDB</span><span class="flow-label">auth</span></li>
       <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Express.js</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase</span><span class="flow-label">game data</span></li>
       <li class="flow-item" style="border-color: #7C3AED;"><span class="flow-source">Sub-Projects</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Express.js</span><span class="flow-label">extends backend</span></li>
-      <li class="flow-item" style="border-color: #7C3AED;"><span class="flow-source">Doppler</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Express.js</span><span class="flow-label">secrets</span></li>
     </ul>
   </div>
 
   <div class="services-row" style="margin-top: 24px;">
     <span class="services-label">Services:</span>
-    <span class="service-badge badge-railway">Railway</span>
-    <span class="service-badge badge-supabase">Supabase</span>
+    <span class="service-badge badge-railway"><img class="badge-icon" src="https://icons.terrastruct.com/tech%2F022-server.svg" alt="">Railway</span>
+    <span class="service-badge badge-supabase"><img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">Supabase</span>
     <span class="service-badge badge-netlify">Netlify</span>
-    <span class="service-badge badge-mongodb">MongoDB</span>
+    <span class="service-badge badge-mongodb"><img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fmongodb.svg" alt="">MongoDB</span>
     <span class="service-badge badge-doppler">Doppler</span>
-    <span class="service-badge badge-discord">Discord</span>
-    <span class="service-badge badge-github">GitHub</span>
+    <span class="service-badge badge-github"><img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fgithub.svg" alt="">GitHub</span>
   </div>
 </main>
 <script>document.getElementById('nav-charm').classList.add('active');</script>
+<script src="https://cdn.jsdelivr.net/npm/leader-line/leader-line.min.js"></script>
+<script>
+if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
+  const lines = [];
+  const opt = (color, label) => ({
+    color: color, size: 2, path: 'grid', endPlug: 'arrow1',
+    startSocket: 'bottom', endSocket: 'top',
+    middleLabel: label ? LeaderLine.pathLabel({text: label, color: color, fontSize: '13px'}) : undefined
+  });
+  lines.push(new LeaderLine(document.getElementById('section-frontend'), document.getElementById('section-backend'), opt('#1A73E8', 'API calls')));
+  lines.push(new LeaderLine(document.getElementById('section-backend'), document.getElementById('section-database'), opt('#34A853', 'auth + data')));
+  lines.push(new LeaderLine(document.getElementById('section-subprojects'), document.getElementById('section-backend'), {
+    color: '#7C3AED', size: 2, path: 'grid', endPlug: 'arrow1',
+    startSocket: 'top', endSocket: 'bottom',
+    middleLabel: LeaderLine.pathLabel({text: 'extends', color: '#7C3AED', fontSize: '13px'})
+  }));
+  window.addEventListener('resize', () => lines.forEach(l => l.position()));
+}
+</script>
 </body>
 </html>

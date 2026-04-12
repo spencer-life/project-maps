@@ -21,8 +21,8 @@
   <h1>WarRoom Agency Flow</h1>
   <p class="subtitle">Full submission &rarr; processing &rarr; Discord bot pipeline</p>
 
-  <div class="arch-section" style="border-color: #F57C00;">
-    <div class="arch-header" style="background: #F57C00;"><h2>Agency Hierarchy</h2></div>
+  <div class="arch-section" id="section-agencies" style="border-color: #F57C00;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #F57C00, #E65100);"><h2>Agency Hierarchy</h2></div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #F57C00; background: #FFF8E1;"><div class="node-name">Execute Financial</div><div class="node-detail">3 top-level: Sentinel, Ascend, Nitehawk</div></div>
@@ -32,8 +32,8 @@
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #7C3AED;">
-    <div class="arch-header" style="background: #7C3AED;"><h2>Submission Forms</h2></div>
+  <div class="arch-section" id="section-forms" style="border-color: #7C3AED;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #7C3AED, #6D28D9);"><h2>Submission Forms</h2></div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://leaderboard-submit.netlify.app">Execute Form</a></div><div class="node-detail">Netlify-hosted submission</div></div>
@@ -43,8 +43,8 @@
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #1A73E8;">
-    <div class="arch-header" style="background: #1A73E8;"><h2>Processing</h2></div>
+  <div class="arch-section" id="section-processing" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #1A73E8, #1565C0);"><h2>Processing</h2></div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Google Apps Script</div><div class="node-detail">2 active deployments (Execute Financial + Diligence)</div></div>
@@ -53,20 +53,23 @@
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #5865F2;">
-    <div class="arch-header" style="background: #5865F2;"><h2>Discord Bots</h2></div>
+  <div class="arch-section" id="section-bots" style="border-color: #5865F2;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #5865F2, #7C3AED);">
+      <img class="header-icon" src="https://icons.terrastruct.com/dev%2Fnodejs.svg" alt="">
+      <h2>Discord Bots</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
-        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Leaderboard Bot</div><div class="node-detail">Railway: unique-imagination</div></div>
-        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">war-room-ai</div><div class="node-detail">Railway: authentic-passion &mdash; Agency management + Gemini AI</div></div>
-        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">WarRoomEngine Bot</div><div class="node-detail">Railway PostgreSQL &mdash; admin + onboarding</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/tech%2F022-server.svg" alt="">Leaderboard Bot</div><div class="node-detail">Railway: unique-imagination</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Fnodejs.svg" alt="">war-room-ai</div><div class="node-detail">Railway: authentic-passion &mdash; Agency management + Gemini AI</div></div>
+        <div class="arch-node" style="border-color: #5865F2;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">WarRoomEngine Bot</div><div class="node-detail">Railway PostgreSQL &mdash; admin + onboarding</div></div>
         <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Licensing Bot</div><div class="node-detail">Railway: surprising-renewal (NO DEPLOY)</div></div>
       </div>
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #FF9800;">
-    <div class="arch-header" style="background: #FF9800;"><h2>AI Layer</h2></div>
+  <div class="arch-section" id="section-ai" style="border-color: #FF9800;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #FF9800, #F57C00);"><h2>AI Layer</h2></div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #FF9800;"><div class="node-name">Google Gemini</div><div class="node-detail">Powers war-room-ai and Execute Financial bots</div></div>
@@ -74,8 +77,8 @@
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #5865F2;">
-    <div class="arch-header" style="background: #5865F2;"><h2>Output &mdash; Discord Webhooks</h2></div>
+  <div class="arch-section" id="section-output" style="border-color: #5865F2;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #5865F2, #4338CA);"><h2>Output &mdash; Discord Webhooks</h2></div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Live Wins</div><div class="node-detail">Real-time submission notifications</div></div>
@@ -99,15 +102,36 @@
 
   <div class="services-row" style="margin-top: 24px;">
     <span class="services-label">Services:</span>
-    <span class="service-badge badge-railway">Railway</span>
+    <span class="service-badge badge-railway"><img class="badge-icon" src="https://icons.terrastruct.com/tech%2F022-server.svg" alt="">Railway</span>
     <span class="service-badge badge-netlify">Netlify</span>
     <span class="service-badge badge-discord">Discord</span>
     <span class="service-badge badge-sheets">Google Sheets</span>
     <span class="service-badge badge-apps-script">Apps Script</span>
     <span class="service-badge badge-doppler">Doppler</span>
-    <span class="service-badge badge-github">GitHub</span>
+    <span class="service-badge badge-github"><img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fgithub.svg" alt="">GitHub</span>
   </div>
 </main>
 <script>document.getElementById('nav-warroom').classList.add('active');</script>
+<script src="https://cdn.jsdelivr.net/npm/leader-line/leader-line.min.js"></script>
+<script>
+if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
+  const lines = [];
+  const opt = (color, label) => ({
+    color: color, size: 2, path: 'grid', endPlug: 'arrow1',
+    startSocket: 'bottom', endSocket: 'top',
+    middleLabel: label ? LeaderLine.pathLabel({text: label, color: color, fontSize: '13px'}) : undefined
+  });
+  lines.push(new LeaderLine(document.getElementById('section-agencies'), document.getElementById('section-forms'), opt('#F57C00', 'submits')));
+  lines.push(new LeaderLine(document.getElementById('section-forms'), document.getElementById('section-processing'), opt('#7C3AED', 'POST')));
+  lines.push(new LeaderLine(document.getElementById('section-processing'), document.getElementById('section-bots'), opt('#1A73E8', 'reads data')));
+  lines.push(new LeaderLine(document.getElementById('section-bots'), document.getElementById('section-output'), opt('#5865F2', 'posts')));
+  lines.push(new LeaderLine(document.getElementById('section-ai'), document.getElementById('section-bots'), {
+    color: '#FF9800', size: 2, path: 'grid', endPlug: 'arrow1',
+    startSocket: 'right', endSocket: 'left',
+    middleLabel: LeaderLine.pathLabel({text: 'powers AI', color: '#FF9800', fontSize: '13px'})
+  }));
+  window.addEventListener('resize', () => lines.forEach(l => l.position()));
+}
+</script>
 </body>
 </html>

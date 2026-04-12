@@ -21,8 +21,10 @@
   <h1>Insurance UW Bot</h1>
   <p class="subtitle">Python + Claude Sonnet 4 + Haiku 4.5 &mdash; 9 carriers, 545 tests</p>
 
-  <div class="arch-section" style="border-color: #5865F2;">
-    <div class="arch-header" style="background: #5865F2;"><h2>Discord Server</h2></div>
+  <div class="arch-section" id="section-discord" style="border-color: #5865F2;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #5865F2, #7C3AED);">
+      <h2>Discord Server</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #5865F2;"><div class="node-name">Agent / User</div><div class="node-detail">Interacts via Discord</div></div>
@@ -31,8 +33,11 @@
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #1A73E8;">
-    <div class="arch-header" style="background: #1A73E8;"><h2>Insurance UW Bot (Python)</h2></div>
+  <div class="arch-section" id="section-bot" style="border-color: #1A73E8;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #1A73E8, #1565C0);">
+      <img class="header-icon" src="https://icons.terrastruct.com/dev%2Fpython.svg" alt="">
+      <h2>Insurance UW Bot (Python)</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
         <div class="arch-node" style="border-color: #1A73E8;"><div class="node-name">Claude AI Agent</div><div class="node-detail">Primary intelligence layer</div></div>
@@ -41,22 +46,28 @@
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #34A853;">
-    <div class="arch-header" style="background: #34A853;"><h2>Data Layer</h2></div>
+  <div class="arch-section" id="section-data" style="border-color: #34A853;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #34A853, #2E7D32);">
+      <img class="header-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">
+      <h2>Data Layer</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
-        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Railway PostgreSQL</div><div class="node-detail">9 carriers, 32 products, 902 rules, 312 meds</div><div class="node-shape">Database</div></div>
-        <div class="arch-node" style="border-color: #34A853;"><div class="node-name">Supabase pgvector</div><div class="node-detail">Alt account &mdash; guideline embeddings</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">Railway PostgreSQL</div><div class="node-detail">9 carriers, 32 products, 902 rules, 312 meds</div><div class="node-shape">Database</div></div>
+        <div class="arch-node" style="border-color: #34A853;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">Supabase pgvector</div><div class="node-detail">Alt account &mdash; guideline embeddings</div><div class="node-shape">Database</div></div>
         <div class="arch-node" style="border-color: #FF9800;"><div class="node-name">OpenAI Embeddings</div><div class="node-detail">Generates embeddings for vector search</div></div>
       </div>
     </div>
   </div>
 
-  <div class="arch-section" style="border-color: #7C3AED;">
-    <div class="arch-header" style="background: #7C3AED;"><h2>Deployment</h2></div>
+  <div class="arch-section" id="section-deploy" style="border-color: #7C3AED;">
+    <div class="arch-header" style="background: linear-gradient(135deg, #7C3AED, #6D28D9);">
+      <img class="header-icon" src="https://icons.terrastruct.com/tech%2F022-server.svg" alt="">
+      <h2>Deployment</h2>
+    </div>
     <div class="arch-body">
       <div class="arch-nodes">
-        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><a href="https://railway.app">Railway</a></div><div class="node-detail">Hosts the bot</div></div>
+        <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name"><img class="node-icon" src="https://icons.terrastruct.com/tech%2F022-server.svg" alt=""><a href="https://railway.app">Railway</a></div><div class="node-detail">Hosts the bot</div></div>
         <div class="arch-node" style="border-color: #7C3AED;"><div class="node-name">Doppler</div><div class="node-detail">spencer-main / dev_personal config</div></div>
       </div>
     </div>
@@ -70,20 +81,34 @@
       <li class="flow-item" style="border-color: #1A73E8;"><span class="flow-source">Agent</span><span class="flow-arrow">&rarr;</span><span class="flow-target">11 Agent Tools</span></li>
       <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Tools</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Railway PostgreSQL</span><span class="flow-label">queries</span></li>
       <li class="flow-item" style="border-color: #34A853;"><span class="flow-source">Tools</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase pgvector</span><span class="flow-label">vector search</span></li>
-      <li class="flow-item" style="border-color: #FF9800;"><span class="flow-source">OpenAI</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Supabase pgvector</span><span class="flow-label">generates embeddings</span></li>
       <li class="flow-item" style="border-color: #7C3AED;"><span class="flow-source">Doppler</span><span class="flow-arrow">&rarr;</span><span class="flow-target">Railway</span><span class="flow-label">secrets</span></li>
     </ul>
   </div>
 
   <div class="services-row" style="margin-top: 24px;">
     <span class="services-label">Services:</span>
-    <span class="service-badge badge-railway">Railway</span>
-    <span class="service-badge badge-supabase">Supabase</span>
+    <span class="service-badge badge-railway"><img class="badge-icon" src="https://icons.terrastruct.com/tech%2F022-server.svg" alt="">Railway</span>
+    <span class="service-badge badge-supabase"><img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fpostgresql.svg" alt="">Supabase</span>
     <span class="service-badge badge-doppler">Doppler</span>
     <span class="service-badge badge-discord">Discord</span>
-    <span class="service-badge badge-github">GitHub</span>
+    <span class="service-badge badge-github"><img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fgithub.svg" alt="">GitHub</span>
   </div>
 </main>
 <script>document.getElementById('nav-uw-bot').classList.add('active');</script>
+<script src="https://cdn.jsdelivr.net/npm/leader-line/leader-line.min.js"></script>
+<script>
+if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
+  const lines = [];
+  const opt = (color, label) => ({
+    color: color, size: 2, path: 'grid', endPlug: 'arrow1',
+    startSocket: 'bottom', endSocket: 'top',
+    middleLabel: label ? LeaderLine.pathLabel({text: label, color: color, fontSize: '13px'}) : undefined
+  });
+  lines.push(new LeaderLine(document.getElementById('section-discord'), document.getElementById('section-bot'), opt('#5865F2', 'triggers')));
+  lines.push(new LeaderLine(document.getElementById('section-bot'), document.getElementById('section-data'), opt('#1A73E8', 'queries')));
+  lines.push(new LeaderLine(document.getElementById('section-data'), document.getElementById('section-deploy'), opt('#7C3AED', 'secrets')));
+  window.addEventListener('resize', () => lines.forEach(l => l.position()));
+}
+</script>
 </body>
 </html>
