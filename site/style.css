@@ -555,12 +555,6 @@ h1 {
 
 /* ---- LEADERLINE RESPONSIVE ---- */
 
-@media (min-width: 769px) {
-  .flow-section {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
   .leader-line {
     display: none !important;

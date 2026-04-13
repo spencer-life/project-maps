@@ -222,7 +222,7 @@
   </div>
 
   <div class="footnote">
-    <strong>Universal:</strong> All active projects use <strong>GitHub</strong> (<img class="badge-icon" src="https://icons.terrastruct.com/dev%2Fgithub.svg" alt="" style="vertical-align: middle;"> spencer-life) + <strong>Doppler</strong> for secrets management.
+    <strong>Universal:</strong> All active projects use <strong>GitHub</strong> (spencer-life) + <strong>Doppler</strong> for secrets management.
   </div>
 </main>
 <script>document.getElementById('nav-overview').classList.add('active');</script>
@@ -231,9 +231,10 @@
 if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
   const lines = [];
   const opt = (color) => ({
-    color: color, size: 2, path: 'fluid', endPlug: 'arrow1',
+    color: color, size: 4, path: 'fluid', endPlug: 'arrow1',
+    endPlugSize: 1.5,
     startSocket: 'bottom', endSocket: 'top',
-    dash: {animation: true, duration: 2000}
+    dropShadow: {dx: 1, dy: 3, blur: 5}
   });
 
   // Insurance (blue) -> Railway, Supabase

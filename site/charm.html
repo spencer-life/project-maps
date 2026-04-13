@@ -96,14 +96,14 @@
 if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
   const lines = [];
   const opt = (color, label) => ({
-    color: color, size: 2, path: 'grid', endPlug: 'arrow1',
+    color: color, size: 4, path: 'grid', endPlug: 'arrow1',
     startSocket: 'bottom', endSocket: 'top',
     middleLabel: label ? LeaderLine.pathLabel({text: label, color: color, fontSize: '13px'}) : undefined
   });
   lines.push(new LeaderLine(document.getElementById('section-frontend'), document.getElementById('section-backend'), opt('#1A73E8', 'API calls')));
   lines.push(new LeaderLine(document.getElementById('section-backend'), document.getElementById('section-database'), opt('#34A853', 'auth + data')));
   lines.push(new LeaderLine(document.getElementById('section-subprojects'), document.getElementById('section-backend'), {
-    color: '#7C3AED', size: 2, path: 'grid', endPlug: 'arrow1',
+    color: '#7C3AED', size: 4, path: 'grid', endPlug: 'arrow1',
     startSocket: 'top', endSocket: 'bottom',
     middleLabel: LeaderLine.pathLabel({text: 'extends', color: '#7C3AED', fontSize: '13px'})
   }));

@@ -117,7 +117,7 @@
 if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
   const lines = [];
   const opt = (color, label) => ({
-    color: color, size: 2, path: 'grid', endPlug: 'arrow1',
+    color: color, size: 4, path: 'grid', endPlug: 'arrow1',
     startSocket: 'bottom', endSocket: 'top',
     middleLabel: label ? LeaderLine.pathLabel({text: label, color: color, fontSize: '13px'}) : undefined
   });
@@ -126,7 +126,7 @@ if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
   lines.push(new LeaderLine(document.getElementById('section-processing'), document.getElementById('section-bots'), opt('#1A73E8', 'reads data')));
   lines.push(new LeaderLine(document.getElementById('section-bots'), document.getElementById('section-output'), opt('#5865F2', 'posts')));
   lines.push(new LeaderLine(document.getElementById('section-ai'), document.getElementById('section-bots'), {
-    color: '#FF9800', size: 2, path: 'grid', endPlug: 'arrow1',
+    color: '#FF9800', size: 4, path: 'grid', endPlug: 'arrow1',
     startSocket: 'right', endSocket: 'left',
     middleLabel: LeaderLine.pathLabel({text: 'powers AI', color: '#FF9800', fontSize: '13px'})
   }));

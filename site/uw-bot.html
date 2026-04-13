@@ -100,7 +100,7 @@
 if (window.innerWidth > 768 && typeof LeaderLine !== 'undefined') {
   const lines = [];
   const opt = (color, label) => ({
-    color: color, size: 2, path: 'grid', endPlug: 'arrow1',
+    color: color, size: 4, path: 'grid', endPlug: 'arrow1',
     startSocket: 'bottom', endSocket: 'top',
     middleLabel: label ? LeaderLine.pathLabel({text: label, color: color, fontSize: '13px'}) : undefined
   });
